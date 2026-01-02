@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="240" viewBox="0 0 900 240">
+  <defs>
+    <linearGradient id="lens" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2F6FEB"/>
+      <stop offset="1" stop-color="#4B8BFF"/>
+    </linearGradient>
+
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFB84D"/>
+      <stop offset="1" stop-color="#FF7A00"/>
+    </linearGradient>
+
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#1B3A7A" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+
+  <!-- Icon -->
+  <g transform="translate(40,28)" filter="url(#softShadow)">
+    <circle cx="92" cy="92" r="76" fill="url(#lens)"/>
+    <circle cx="92" cy="92" r="58" fill="#FFFFFF" opacity="0.18"/>
+
+    <path d="M144 144 L190 190"
+          stroke="#2F6FEB" stroke-width="22" stroke-linecap="round"/>
+
+    <path d="M40 66
+             A66 66 0 0 1 118 34"
+          fill="none" stroke="url(#accent)" stroke-width="12" stroke-linecap="round"/>
+
+    <path d="M72 70
+             C72 54 86 44 104 44
+             C119 44 130 51 133 63
+             C137 78 124 86 108 90
+             C91 94 78 100 80 114
+             C83 129 97 136 111 136
+             C130 136 142 124 142 108"
+          fill="none" stroke="url(#accent)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Text -->
+  <text x="270" y="142"
+        font-family="Inter, SF Pro Display, system-ui, -apple-system, Segoe UI, Roboto, Arial"
+        font-size="84" font-weight="800" letter-spacing="-1">
+    <tspan fill="#1E3A8A">Tap</tspan>
+    <tspan fill="url(#accent)">Soran</tspan>
+  </text>
+
+  <text x="272" y="188"
+        font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial"
+        font-size="26" font-weight="500" fill="#6B7280">
+    Axtar • Sorğu ver • Tap
+  </text>
+</svg>
