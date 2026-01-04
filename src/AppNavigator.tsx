@@ -5,6 +5,7 @@ import { useAuth } from "./state/AuthContext";
 import { AuthScreen } from "./screens/AuthScreen";
 import { ChatScreen } from "./screens/ChatScreen";
 import { NotificationsScreen } from "./screens/NotificationsScreen";
+import { PreferencesScreen } from "./screens/PreferencesScreen";
 import { ActivityIndicator, View } from "react-native";
 import { Text, useTheme } from "react-native-paper";
 import { BuyerTabs } from "./navigation/BuyerTabs";
@@ -57,6 +58,17 @@ export function AppNavigator() {
               component={NotificationsScreen}
               options={{
                 title: "Bildirişlər",
+                headerStyle: { backgroundColor: theme.colors.surface },
+                headerTintColor: theme.colors.onSurface,
+                headerShadowVisible: false,
+              }}
+            />
+
+            <Root.Screen
+              name="Preferences"
+              component={PreferencesScreen}
+              options={{
+                title: "Ayarlar",
                 headerStyle: { backgroundColor: theme.colors.surface },
                 headerTintColor: theme.colors.onSurface,
                 headerShadowVisible: false,

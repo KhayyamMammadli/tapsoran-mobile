@@ -1,8 +1,10 @@
 export type RootStackParamList = {
   Auth: undefined;
-  App: undefined;
+  Tabs: undefined;
+  Notifications: undefined;
+  Preferences: undefined;
   Chat: { conversationId: string };
-  Requests: undefined;
+  AdminChatDetail: { conversationId: string } | undefined;
 };
 
 export type AuthStackParamList = {

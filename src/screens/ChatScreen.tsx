@@ -8,12 +8,14 @@ import { Message } from "../types";
 import { getSocket } from "../lib/socket";
 import { useAuth } from "../state/AuthContext";
 import { Screen } from "../components/Screen";
+import { usePrefs } from "../state/PreferencesContext";
 
 type Props = NativeStackScreenProps<RootStackParamList, "Chat">;
 
 export function ChatScreen({ route }: Props) {
   const { conversationId } = route.params;
   const { user } = useAuth();
+  const { chatFontFamily } = usePrefs();
   const theme = useTheme();
 
   const [msgs, setMsgs] = useState<Message[]>([]);
@@ -81,7 +83,7 @@ export function ChatScreen({ route }: Props) {
                   }}
                 >
                   <Card.Content style={{ paddingVertical: 10, paddingHorizontal: 12, gap: 4 }}>
-                    <Text style={{ color: fg }}>{item.text}</Text>
+                    <Text style={{ color: fg, fontFamily: chatFontFamily }}>{item.text}</Text>
                     <Text style={{ color: mine ? "rgba(255,255,255,0.8)" : theme.colors.onSurfaceVariant, fontSize: 11 }}>
                       {new Date(item.createdAt).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
                     </Text>
@@ -99,6 +101,7 @@ export function ChatScreen({ route }: Props) {
             placeholder="Mesaj..."
             value={text}
             onChangeText={setText}
+            contentStyle={{ fontFamily: chatFontFamily }}
           />
           <Button mode="contained" onPress={send} style={{ borderRadius: 5 }}>
             Göndər

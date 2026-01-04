@@ -3,6 +3,7 @@ import { api } from "../lib/api";
 import { clearToken, clearUser, getToken, getUser, setToken, setUser, User } from "../lib/authStore";
 import { connectSocket, disconnectSocket } from "../lib/socket";
 import { registerForPushNotificationsAsync } from "../lib/push";
+import { usePrefs } from "./PreferencesContext";
 
 type AuthState = {
   token: string | null;
@@ -26,6 +27,7 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
+  const { notificationsEnabled } = usePrefs();
   const [token, setTok] = useState<string | null>(null);
   const [user, setUsr] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
@@ -44,6 +46,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // Register device for push notifications after login and send token to backend
   useEffect(() => {
     if (!token || !user) return;
+    if (!notificationsEnabled) return;
 
     (async () => {
       const pushToken = await registerForPushNotificationsAsync();
@@ -55,7 +58,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         // ignore
       }
     })();
-  }, [token, user?.id]);
+  }, [token, user?.id, notificationsEnabled]);
 
   // NOTE: Backend enforces role for non-super-admin users.
   // Mobile must send the selected role (BUYER/SELLER) during login.
