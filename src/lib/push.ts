@@ -13,13 +13,29 @@ export function applyNotificationBehavior(opts: { notificationsEnabled: boolean;
   notificationsEnabled = opts.notificationsEnabled;
   notificationSound = opts.notificationSound;
 
-  // Android: (re)configure channel. Safe to call multiple times.
+  // Android: configure channels (sound selection works via channelId on Android 8+).
   if (Platform.OS === "android") {
-    void Notifications.setNotificationChannelAsync("default", {
-      name: "default",
-      importance: Notifications.AndroidImportance.MAX,
-      sound: notificationSound ? "default" : undefined,
-    });
+    defaultChannelId =
+      !notificationSound ? "silent" :
+      notificationSoundKey === "CHIME" ? "sound_chime" :
+      notificationSoundKey === "DING" ? "sound_ding" :
+      notificationSoundKey === "POP" ? "sound_pop" : "default";
+
+    const channels = [
+      { id: "default", name: "Əsas bildirişlər", sound: "default" as any },
+      { id: "silent", name: "Səssiz bildirişlər", sound: undefined as any },
+      { id: "sound_chime", name: "Bildirişlər (Çınqıltı)", sound: "chime.wav" as any },
+      { id: "sound_ding", name: "Bildirişlər (Zəng)", sound: "ding.wav" as any },
+      { id: "sound_pop", name: "Bildirişlər (Pop)", sound: "pop.wav" as any },
+    ];
+
+    for (const c of channels) {
+      void Notifications.setNotificationChannelAsync(c.id, {
+        name: c.name,
+        importance: Notifications.AndroidImportance.MAX,
+        sound: c.sound,
+      });
+    }
   }
 }
 
@@ -67,4 +83,9 @@ export async function registerForPushNotificationsAsync(): Promise<string | null
   } catch {
     return null;
   }
+}
+
+
+export function getDefaultNotificationChannelId() {
+  return defaultChannelId;
 }

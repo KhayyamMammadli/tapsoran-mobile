@@ -27,7 +27,7 @@ export function useAuth() {
 }
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const { notificationsEnabled } = usePrefs();
+  const { notificationsEnabled, notificationSound, notificationSoundKey } = usePrefs();
   const [token, setTok] = useState<string | null>(null);
   const [user, setUsr] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
@@ -46,19 +46,31 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   // Register device for push notifications after login and send token to backend
   useEffect(() => {
     if (!token || !user) return;
-    if (!notificationsEnabled) return;
+    if (!notificationsEnabled) {
+      try {
+        await api.patch("/me/push-settings", { enabled: false, token: null, soundEnabled: notificationSound, soundKey: notificationSoundKey });
+      } catch {
+        // ignore
+      }
+      return;
+    }
 
     (async () => {
       const pushToken = await registerForPushNotificationsAsync();
       if (!pushToken) return;
 
       try {
-        await api.post("/me/push-token", { token: pushToken });
+        await api.patch("/me/push-settings", {
+          enabled: true,
+          token: pushToken,
+          soundEnabled: notificationSound,
+          soundKey: notificationSoundKey,
+        });
       } catch {
         // ignore
       }
     })();
-  }, [token, user?.id, notificationsEnabled]);
+  }, [token, user?.id, notificationsEnabled, notificationSound, notificationSoundKey]);
 
   // NOTE: Backend enforces role for non-super-admin users.
   // Mobile must send the selected role (BUYER/SELLER) during login.

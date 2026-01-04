@@ -8,6 +8,7 @@ type PrefsState = Prefs & {
   setChatFont: (v: ChatFont) => void;
   setNotificationsEnabled: (v: boolean) => void;
   setNotificationSound: (v: boolean) => void;
+  setNotificationSoundKey: (v: Prefs["notificationSoundKey"]) => void;
   setLocationEnabled: (v: boolean) => void;
   setAvatarUri: (uri: string | null) => void;
   chatFontFamily: string | undefined;
@@ -40,6 +41,7 @@ export function PreferencesProvider({ children }: { children: React.ReactNode })
       applyNotificationBehavior({
         notificationsEnabled: p.notificationsEnabled,
         notificationSound: p.notificationSound,
+        notificationSoundKey: p.notificationSoundKey,
       });
       setLoading(false);
     })();
@@ -69,6 +71,7 @@ export function PreferencesProvider({ children }: { children: React.ReactNode })
       setChatFont: (v) => update({ chatFont: v }),
       setNotificationsEnabled: (v) => update({ notificationsEnabled: v }),
       setNotificationSound: (v) => update({ notificationSound: v }),
+      setNotificationSoundKey: (v) => update({ notificationSoundKey: v }),
       setLocationEnabled: (v) => update({ locationEnabled: v }),
       setAvatarUri: (uri) => update({ avatarUri: uri }),
     };
