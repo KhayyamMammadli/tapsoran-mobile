@@ -54,7 +54,7 @@ export function AdminUsersScreen() {
 
   return (
     <View style={{ flex: 1, padding: 16, backgroundColor: theme.colors.background }}>
-      <Card style={{ borderRadius: 18, marginBottom: 12 }}>
+      <Card mode="contained" style={{ borderRadius: 5, marginBottom: 12, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
         <Card.Content style={{ gap: 10 }}>
           <Text variant="titleLarge" style={{ fontWeight: "900" }}>
             İstifadəçilər
@@ -75,7 +75,7 @@ export function AdminUsersScreen() {
         onRefresh={load}
         contentContainerStyle={{ gap: 12, paddingBottom: 90 }}
         renderItem={({ item }) => (
-          <Card style={{ borderRadius: 18 }}>
+          <Card mode="contained" style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
             <Card.Content style={{ gap: 8 }}>
               <Text style={{ fontWeight: "900" }} numberOfLines={1}>
                 {item.fullName}
@@ -164,7 +164,7 @@ export function AdminUsersScreen() {
             bottom: 90,
           }}
         >
-          <Card style={{ borderRadius: 18 }}>
+          <Card mode="contained" style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
             <Card.Content style={{ gap: 10 }}>
               <Text style={{ fontWeight: "900" }}>
                 Blok səbəbi: {target?.fullName}

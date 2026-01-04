@@ -1,68 +1,186 @@
-import React from "react";
-import { View } from "react-native";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { FlatList, View } from "react-native";
+import { Button, Card, Text, ActivityIndicator, useTheme } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
-import { Card, Text, useTheme } from "react-native-paper";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { Screen } from "../components/Screen";
 import { HeroHeader } from "../components/HeroHeader";
-import { ServiceCard } from "../components/ServiceCard";
+import { api } from "../lib/api";
+import { getSocket } from "../lib/socket";
+import type { RequestItem } from "../types";
+
+const PAGE_SIZE = 5;
 
 export function SellerHomeScreen() {
-  const nav = useNavigation<any>();
   const theme = useTheme();
+  const nav = useNavigation<any>();
+
+  const [items, setItems] = useState<RequestItem[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [refreshing, setRefreshing] = useState(false);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
+
+  const loadPage = useCallback(
+    async ({ skip, append }: { skip: number; append: boolean }) => {
+      const res = await api.get<RequestItem[]>("/requests/feed", {
+        params: { take: PAGE_SIZE, skip },
+      });
+
+      // Backward-compatible fallback: if backend ignores pagination and returns more,
+      // we still keep only the expected slice for smooth lazy-load UI.
+      const page = Array.isArray(res.data) ? res.data : [];
+      const slice = page.length > PAGE_SIZE ? page.slice(0, PAGE_SIZE) : page;
+
+      setHasMore(slice.length === PAGE_SIZE);
+      setItems((prev) => (append ? [...prev, ...slice] : slice));
+    },
+    []
+  );
+
+  const loadInitial = useCallback(async () => {
+    setLoading(true);
+    try {
+      await loadPage({ skip: 0, append: false });
+    } finally {
+      setLoading(false);
+    }
+  }, [loadPage]);
+
+  const onRefresh = useCallback(async () => {
+    setRefreshing(true);
+    try {
+      await loadPage({ skip: 0, append: false });
+    } finally {
+      setRefreshing(false);
+    }
+  }, [loadPage]);
+
+  const onLoadMore = useCallback(async () => {
+    if (!hasMore || loadingMore || loading || refreshing) return;
+    setLoadingMore(true);
+    try {
+      await loadPage({ skip: items.length, append: true });
+    } finally {
+      setLoadingMore(false);
+    }
+  }, [hasMore, loadingMore, loading, refreshing, loadPage, items.length]);
+
+  useEffect(() => {
+    loadInitial();
+  }, [loadInitial]);
+
+  useEffect(() => {
+    const s = getSocket();
+    if (!s) return;
+
+    const onNew = (req: RequestItem) => {
+      setItems((prev) => [req, ...prev]);
+    };
+
+    s.on("new_request", onNew);
+    return () => {
+      s.off("new_request", onNew);
+    };
+  }, []);
+
+  const accept = useCallback(
+    async (requestId: string) => {
+      try {
+        const res = await api.post(`/requests/${requestId}/accept`);
+        const convId = res.data?.conversation?.id;
+        if (convId) nav.navigate("Chat", { conversationId: convId });
+        await loadInitial();
+      } catch (e: any) {
+        const msg = e?.response?.data?.error || "Sorğu qəbul edilə bilmədi";
+        alert(msg);
+      }
+    },
+    [nav, loadInitial]
+  );
+
+  const header = useMemo(
+    () => (
+      <View style={{ gap: 12 }}>
+        <HeroHeader
+          title="Satıcı kabineti"
+          subtitle="Sizə uyğun sorğuları burada görə bilərsiniz. Sorğunu qəbul etdikdən sonra alıcı ilə yazışma başlaya bilər." 
+        />
+
+        <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+          <Text variant="titleMedium">Gələn sorğular</Text>
+          <Button mode="text" onPress={onRefresh} compact>
+            Yenilə
+          </Button>
+        </View>
+      </View>
+    ),
+    [onRefresh]
+  );
 
   return (
-    <Screen>
-      <HeroHeader
-        title="Satıcı kabineti"
-        subtitle="Yeni sorğuları izləyin, uyğun olanları qəbul edin və alıcı ilə əlaqə qurun."      />
-
-      <Text variant="titleMedium" style={{ marginTop: 4 }}>
-        Panel
-      </Text>
-
-      <View style={{ flexDirection: "row", gap: 12 }}>
-        <View style={{ flex: 1 }}>
-          <ServiceCard
-            title="Sorğular (Feed)"
-            subtitle="Uyğun sorğuları gör"            badge="Aktiv"
-            onPress={() => nav.navigate("SellerFeed")}
-          />
+    // NOTE: This screen uses FlatList (VirtualizedList). It must NOT be wrapped
+    // in a ScrollView (Screen's default behavior), otherwise RN warns and
+    // windowing/infinite scroll can break.
+    <Screen scroll={false}>
+      {loading ? (
+        <View style={{ paddingTop: 40, alignItems: "center" }}>
+          <ActivityIndicator />
+          <Text style={{ marginTop: 10, color: theme.colors.onSurfaceVariant }}>Yüklənir...</Text>
         </View>
-        <View style={{ flex: 1 }}>
-          <ServiceCard
-            title="Chatlər"
-            subtitle="Alıcılarla yazış"            onPress={() => nav.navigate("SellerChats")}
-          />
-        </View>
-      </View>
-
-      <View style={{ flexDirection: "row", gap: 12 }}>
-        <View style={{ flex: 1 }}>
-          <ServiceCard
-            title="Profil"
-            subtitle="Kateqoriya və tip"            onPress={() => nav.navigate("SellerProfile")}
-          />
-        </View>
-        <View style={{ flex: 1 }}>
-          <ServiceCard
-            title="Məsləhətlər"
-            subtitle="İşinizi sürətləndirin"            onPress={() => nav.navigate("SellerFeed")}
-          />
-        </View>
-      </View>
-
-      <Card mode="elevated" style={{ borderRadius: 22 }}>
-        <Card.Content style={{ gap: 6 }}>
-          <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
-            <MaterialCommunityIcons name="check-decagram-outline" size={18} color={theme.colors.onSurfaceVariant} />
-            <Text variant="titleMedium">Qayda</Text>
-          </View>
-          <Text style={{ color: theme.colors.onSurfaceVariant }}>
-            Sorğunu qəbul etdikdən sonra alıcıya tez yazın — cavab sürəti satış şansını artırır.
-          </Text>
-        </Card.Content>
-      </Card>
+      ) : (
+        <FlatList
+          style={{ flex: 1 }}
+          data={items}
+          keyExtractor={(x) => x.id}
+          contentContainerStyle={{ gap: 12, paddingBottom: 110 }}
+          ListHeaderComponent={header}
+          onEndReachedThreshold={0.35}
+          onEndReached={onLoadMore}
+          renderItem={({ item }) => (
+            <Card
+              mode="contained"
+              style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}
+            >
+              <Card.Title
+                title={item.title}
+                subtitle={`Kateqoriya: ${item.category?.name || "—"}`}
+              />
+              <Card.Content style={{ gap: 4 }}>
+                <Text>Alıcı: {item.buyer?.fullName || "—"}</Text>
+                <Text>
+                  Əhatə: {item.scope === "ALL_SELLERS" ? "Bütün satıcılar" : "Kateqoriya satıcıları"}
+                </Text>
+                {item.accepted ? (
+                  <Text style={{ marginTop: 6, color: theme.colors.primary }}>Status: Qəbul edilib</Text>
+                ) : null}
+              </Card.Content>
+              {!item.accepted ? (
+                <Card.Actions>
+                  <Button mode="contained" onPress={() => accept(item.id)}>
+                    Qəbul et
+                  </Button>
+                </Card.Actions>
+              ) : null}
+            </Card>
+          )}
+          ListEmptyComponent={
+            <Text style={{ color: theme.colors.onSurfaceVariant, textAlign: "center", marginTop: 16 }}>
+              Hələlik sizə uyğun sorğu yoxdur.
+            </Text>
+          }
+          ListFooterComponent={
+            loadingMore ? (
+              <View style={{ paddingVertical: 16 }}>
+                <ActivityIndicator />
+              </View>
+            ) : !hasMore && items.length > 0 ? (
+              <Text style={{ color: theme.colors.onSurfaceVariant, textAlign: "center", marginTop: 8 }}>
+                Hamısı göstərildi
+              </Text>
+            ) : null
+          }
+        />
+      )}
     </Screen>
   );
 }

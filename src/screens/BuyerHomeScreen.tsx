@@ -17,7 +17,10 @@ export function BuyerHomeScreen() {
         title="Alıcı kabineti"
         subtitle="Sorğu yarat, uyğun satıcılardan təklif al və chat ilə əlaqə qur."      />
 
-      <Card mode="elevated" style={{ borderRadius: 22 }}>
+      <Card
+        mode="contained"
+        style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}
+      >
         <Card.Content style={{ gap: 10 }}>
           <Text variant="titleMedium">Sürətli axtarış</Text>
           <TextInput
@@ -66,7 +69,10 @@ export function BuyerHomeScreen() {
         </View>
       </View>
 
-      <Card mode="elevated" style={{ borderRadius: 22 }}>
+      <Card
+        mode="contained"
+        style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}
+      >
         <Card.Content style={{ gap: 6 }}>
           <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
             <MaterialCommunityIcons name="lightbulb-on-outline" size={18} color={theme.colors.onSurfaceVariant} />

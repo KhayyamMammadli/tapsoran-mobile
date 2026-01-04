@@ -76,7 +76,7 @@ export function ChatScreen({ route }: Props) {
                 <Card
                   mode="elevated"
                   style={{
-                    borderRadius: 18,
+                    borderRadius: 5,
                     backgroundColor: bg,
                   }}
                 >
@@ -100,7 +100,7 @@ export function ChatScreen({ route }: Props) {
             value={text}
             onChangeText={setText}
           />
-          <Button mode="contained" onPress={send} style={{ borderRadius: 16 }}>
+          <Button mode="contained" onPress={send} style={{ borderRadius: 5 }}>
             Göndər
           </Button>
         </View>

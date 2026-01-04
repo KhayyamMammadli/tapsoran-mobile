@@ -14,8 +14,8 @@ export function HeroHeader({
   return (
     <View
       style={{
-        borderRadius: 24,
-        padding: 18,
+        borderRadius: 5,
+        padding: 16,
         backgroundColor: theme.colors.primary,
         overflow: "hidden",
       }}

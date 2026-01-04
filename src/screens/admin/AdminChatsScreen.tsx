@@ -35,9 +35,9 @@ export function AdminChatsScreen() {
         onRefresh={load}
         contentContainerStyle={{ gap: 12, paddingBottom: 90 }}
         renderItem={({ item }) => (
-          <Card style={{ borderRadius: 18 }}>
+          <Card mode="contained" style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
             <Card.Content style={{ gap: 8 }}>
-              <Text style={{ fontWeight: "900" }}>Chat</Text>
+              <Text style={{ fontWeight: "900" }}>Çat</Text>
               <Text style={{ color: theme.colors.onSurfaceVariant, fontSize: 12 }}>
                 {new Date(item.createdAt).toLocaleString()}
               </Text>

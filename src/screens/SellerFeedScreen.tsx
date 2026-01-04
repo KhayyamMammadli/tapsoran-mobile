@@ -46,7 +46,7 @@ export function SellerFeedScreen() {
 
   return (
     <View style={{ flex: 1, padding: 16 }}>
-      <Text variant="headlineMedium" style={{ marginBottom: 8 }}>Sorğu feed</Text>
+      <Text variant="headlineMedium" style={{ marginBottom: 8 }}>Sorğu axını</Text>
 
       <FlatList style={{ flex: 1 }}
         data={items}
@@ -57,8 +57,8 @@ export function SellerFeedScreen() {
             <Card.Title title={item.title} subtitle={`Kateqoriya: ${item.category?.name || ""}`} />
             <Card.Content>
               <Text>Alıcı: {item.buyer?.fullName || "—"}</Text>
-              <Text>Scope: {item.scope === "ALL_SELLERS" ? "Bütün satıcılar" : "Kateqoriya satıcıları"}</Text>
-              {item.accepted ? <Text style={{ marginTop: 6 }}>Status: Qəbul edilib</Text> : null}
+              <Text>Əhatə: {item.scope === "ALL_SELLERS" ? "Bütün satıcılar" : "Kateqoriya satıcıları"}</Text>
+              {item.accepted ? <Text style={{ marginTop: 6 }}>Vəziyyət: Qəbul edilib</Text> : null}
             </Card.Content>
             {!item.accepted ? (
               <Card.Actions>

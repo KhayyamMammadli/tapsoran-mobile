@@ -23,7 +23,7 @@ export function AdminHomeScreen() {
 
   return (
     <View style={{ flex: 1, padding: 16, gap: 12, backgroundColor: theme.colors.background }}>
-      <Card style={{ borderRadius: 18 }}>
+      <Card mode="contained" style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
         <Card.Content style={{ gap: 8 }}>
           <Text variant="titleLarge" style={{ fontWeight: "900" }}>
             Super Admin
@@ -35,30 +35,30 @@ export function AdminHomeScreen() {
       </Card>
 
       <View style={{ flexDirection: "row", gap: 12 }}>
-        <Card style={{ flex: 1, borderRadius: 18 }}>
+        <Card mode="contained" style={{ flex: 1, borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
           <Card.Content>
-            <Text style={{ color: theme.colors.onSurfaceVariant }}>Users</Text>
+            <Text style={{ color: theme.colors.onSurfaceVariant }}>İstifadəçilər</Text>
             <Text variant="headlineMedium" style={{ fontWeight: "900" }}>{stats?.users ?? "—"}</Text>
           </Card.Content>
         </Card>
-        <Card style={{ flex: 1, borderRadius: 18 }}>
+        <Card mode="contained" style={{ flex: 1, borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
           <Card.Content>
-            <Text style={{ color: theme.colors.onSurfaceVariant }}>Chats</Text>
+            <Text style={{ color: theme.colors.onSurfaceVariant }}>Çatlar</Text>
             <Text variant="headlineMedium" style={{ fontWeight: "900" }}>{stats?.conversations ?? "—"}</Text>
           </Card.Content>
         </Card>
       </View>
 
       <View style={{ flexDirection: "row", gap: 12 }}>
-        <Card style={{ flex: 1, borderRadius: 18 }}>
+        <Card mode="contained" style={{ flex: 1, borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
           <Card.Content>
-            <Text style={{ color: theme.colors.onSurfaceVariant }}>Requests</Text>
+            <Text style={{ color: theme.colors.onSurfaceVariant }}>Sorğular</Text>
             <Text variant="headlineMedium" style={{ fontWeight: "900" }}>{stats?.requests ?? "—"}</Text>
           </Card.Content>
         </Card>
-        <Card style={{ flex: 1, borderRadius: 18 }}>
+        <Card mode="contained" style={{ flex: 1, borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
           <Card.Content>
-            <Text style={{ color: theme.colors.onSurfaceVariant }}>Categories</Text>
+            <Text style={{ color: theme.colors.onSurfaceVariant }}>Kateqoriyalar</Text>
             <Text variant="headlineMedium" style={{ fontWeight: "900" }}>{stats?.categories ?? "—"}</Text>
           </Card.Content>
         </Card>

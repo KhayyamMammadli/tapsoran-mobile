@@ -101,7 +101,7 @@ export function BuyerCreateRequestScreen() {
         <Card>
           <Card.Title title="Şəkil (optional)" />
           <Card.Content>
-            {previewUri ? <Image source={{ uri: previewUri }} style={{ width: "100%", height: 220, borderRadius: 12 }} /> : null}
+            {previewUri ? <Image source={{ uri: previewUri }} style={{ width: "100%", height: 220, borderRadius: 5 }} /> : null}
           </Card.Content>
           <Card.Actions>
             <Button onPress={pickImage}>Kamera</Button>

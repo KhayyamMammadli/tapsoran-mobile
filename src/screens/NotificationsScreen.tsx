@@ -37,7 +37,7 @@ export function NotificationsScreen() {
 
   return (
     <View style={{ flex: 1, padding: 16, gap: 12, backgroundColor: theme.colors.background }}>
-      <Card style={{ borderRadius: 18 }}>
+      <Card mode="contained" style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
         <Card.Content style={{ gap: 6 }}>
           <Text variant="titleLarge" style={{ fontWeight: "900" }}>
             Bildirişlər
@@ -58,7 +58,7 @@ export function NotificationsScreen() {
         onRefresh={load}
         contentContainerStyle={{ gap: 12, paddingBottom: 90 }}
         renderItem={({ item }) => (
-          <Card style={{ borderRadius: 18 }}>
+          <Card mode="contained" style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
             <Card.Content style={{ gap: 8 }}>
               <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 8 }}>
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>

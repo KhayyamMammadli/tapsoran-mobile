@@ -20,14 +20,17 @@ export function ServiceCard({
 
   return (
     <Pressable onPress={onPress}>
-      <Card mode="elevated" style={{ borderRadius: 22 }}>
+      <Card
+        mode="contained"
+        style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}
+      >
         <Card.Content style={{ gap: 8, paddingVertical: 14 }}>
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
             <View
               style={{
                 width: 44,
                 height: 44,
-                borderRadius: 18,
+                borderRadius: 5,
                 backgroundColor: theme.colors.surfaceVariant,
                 alignItems: "center",
                 justifyContent: "center",

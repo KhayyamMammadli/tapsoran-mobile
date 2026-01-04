@@ -2,7 +2,9 @@ import { MD3LightTheme as DefaultTheme } from "react-native-paper";
 
 export const theme = {
   ...DefaultTheme,
-  roundness: 20,
+  // Consistent UI rounding across the app.
+  // Requested: keep corners subtle (≈5px).
+  roundness: 5,
   colors: {
     ...DefaultTheme.colors,
     primary: "#2F6FEB",

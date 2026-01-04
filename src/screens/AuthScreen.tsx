@@ -71,8 +71,8 @@ export function AuthScreen() {
         setPassword("");
         Alert.alert(
           "Uğurlu",
-          "Qeydiyyat tamamlandı. İndi login səhifəsindən daxil olun.",
-          [{ text: "OK" }]
+          "Qeydiyyat tamamlandı. İndi giriş səhifəsindən daxil olun.",
+          [{ text: "Oldu" }]
         );
       }
     } catch (e: any) {
@@ -98,7 +98,7 @@ export function AuthScreen() {
       {/* Brand hero */}
       <View
         style={{
-          borderRadius: 24,
+          borderRadius: 5,
           padding: 18,
           backgroundColor: theme.colors.primary,
           overflow: "hidden",
@@ -139,13 +139,16 @@ export function AuthScreen() {
       </View>
 
       {/* Auth card */}
-      <Card mode="elevated" style={{ borderRadius: 24 }}>
+      <Card
+        mode="contained"
+        style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}
+      >
         <Card.Content style={{ gap: 12, paddingVertical: 16 }}>
           <SegmentedButtons
             value={mode}
             onValueChange={(v) => setMode(v as Mode)}
             buttons={[
-              { value: "login", label: "Login" },
+              { value: "login", label: "Giriş" },
               { value: "register", label: "Qeydiyyat" },
             ]}
           />
@@ -158,7 +161,7 @@ export function AuthScreen() {
               mode={role === "BUYER" ? "contained" : "outlined"}
               onPress={() => setRole("BUYER")}
               icon="account"
-              style={{ flex: 1, borderRadius: 14 }}
+              style={{ flex: 1, borderRadius: 5 }}
               contentStyle={{ paddingVertical: 4 }}
             >
               Alıcı
@@ -167,7 +170,7 @@ export function AuthScreen() {
               mode={role === "SELLER" ? "contained" : "outlined"}
               onPress={() => setRole("SELLER")}
               icon="store"
-              style={{ flex: 1, borderRadius: 14 }}
+              style={{ flex: 1, borderRadius: 5 }}
               contentStyle={{ paddingVertical: 4 }}
             >
               Satıcı
@@ -208,7 +211,7 @@ export function AuthScreen() {
             loading={loading}
             disabled={!canSubmit}
             onPress={submit}
-            style={{ borderRadius: 16, paddingVertical: 6 }}
+            style={{ borderRadius: 5, paddingVertical: 6 }}
           >
             {mode === "login" ? "Daxil ol" : "Qeydiyyat"}
           </Button>

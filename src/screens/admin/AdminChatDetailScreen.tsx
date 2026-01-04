@@ -51,7 +51,7 @@ export function AdminChatDetailScreen({ route, navigation }: any) {
   return (
     <View style={{ flex: 1, backgroundColor: theme.colors.background }}>
       <View style={{ padding: 16, gap: 10 }}>
-        <Card style={{ borderRadius: 18 }}>
+        <Card mode="contained" style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
           <Card.Content style={{ gap: 8 }}>
             <Text style={{ fontWeight: "900" }}>İştirakçılar</Text>
             <View style={{ flexDirection: "row", gap: 8, flexWrap: "wrap" }}>
@@ -85,7 +85,7 @@ export function AdminChatDetailScreen({ route, navigation }: any) {
         onRefresh={load}
         contentContainerStyle={{ padding: 16, gap: 10, paddingBottom: 140 }}
         renderItem={({ item }: any) => (
-          <Card style={{ borderRadius: 18 }}>
+          <Card mode="contained" style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
             <Card.Content style={{ gap: 6 }}>
               <Text style={{ fontWeight: "900" }}>{item.sender?.fullName || item.senderId}</Text>
               <Text>{item.text}</Text>
@@ -100,7 +100,7 @@ export function AdminChatDetailScreen({ route, navigation }: any) {
 
       {reasonOpen ? (
         <View style={{ position: "absolute", left: 16, right: 16, bottom: 90 }}>
-          <Card style={{ borderRadius: 18 }}>
+          <Card mode="contained" style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
             <Card.Content style={{ gap: 10 }}>
               <Text style={{ fontWeight: "900" }}>Blok səbəbi: {blockUserLabel}</Text>
               <TextInput

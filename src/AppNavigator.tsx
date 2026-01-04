@@ -4,12 +4,14 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useAuth } from "./state/AuthContext";
 import { AuthScreen } from "./screens/AuthScreen";
 import { ChatScreen } from "./screens/ChatScreen";
+import { NotificationsScreen } from "./screens/NotificationsScreen";
 import { ActivityIndicator, View } from "react-native";
 import { Text, useTheme } from "react-native-paper";
 import { BuyerTabs } from "./navigation/BuyerTabs";
 import { SellerTabs } from "./navigation/SellerTabs";
 import { AdminTabs } from "./navigation/AdminTabs";
 import { AdminChatDetailScreen } from "./screens/admin/AdminChatDetailScreen";
+import { HeaderNotifButton } from "./components/HeaderNotifButton";
 
 const Root = createNativeStackNavigator();
 
@@ -51,25 +53,42 @@ export function AppNavigator() {
               options={{ headerShown: false }}
             />
             <Root.Screen
-  name="AdminChatDetail"
-  component={AdminChatDetailScreen}
-  options={{
-    title: "Chat (Admin)",
-    headerStyle: { backgroundColor: theme.colors.surface },
-    headerTintColor: theme.colors.onSurface,
-    headerShadowVisible: false,
-  }}
-/>
-
-<Root.Screen
-  name="Chat"
-              component={ChatScreen}
+              name="Notifications"
+              component={NotificationsScreen}
               options={{
-                title: "Chat",
+                title: "Bildirişlər",
                 headerStyle: { backgroundColor: theme.colors.surface },
                 headerTintColor: theme.colors.onSurface,
                 headerShadowVisible: false,
               }}
+            />
+
+            <Root.Screen
+              name="AdminChatDetail"
+              component={AdminChatDetailScreen}
+              options={({ navigation }) => ({
+                title: "Çat (Admin)",
+                headerStyle: { backgroundColor: theme.colors.surface },
+                headerTintColor: theme.colors.onSurface,
+                headerShadowVisible: false,
+                headerRight: () => (
+                  <HeaderNotifButton onPress={() => (navigation as any).navigate("Notifications")} />
+                ),
+              })}
+            />
+
+            <Root.Screen
+              name="Chat"
+              component={ChatScreen}
+              options={({ navigation }) => ({
+                title: "Çat",
+                headerStyle: { backgroundColor: theme.colors.surface },
+                headerTintColor: theme.colors.onSurface,
+                headerShadowVisible: false,
+                headerRight: () => (
+                  <HeaderNotifButton onPress={() => (navigation as any).navigate("Notifications")} />
+                ),
+              })}
             />
           </>
         )}
