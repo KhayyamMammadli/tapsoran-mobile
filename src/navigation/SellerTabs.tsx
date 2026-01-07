@@ -1,10 +1,11 @@
 import React from "react";
+import { View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { useTheme } from "react-native-paper";
-import { useBadges } from "../state/BadgeContext";
-import { TabIcon } from "../components/TabIcon";
 import { HeaderNotifButton } from "../components/HeaderNotifButton";
+import { HeaderChatActions } from "../components/HeaderChatActions";
+import { HeaderChatButton } from "../components/HeaderChatButton";
 
 import { SellerHomeScreen } from "../screens/SellerHomeScreen";
 import { ConversationsScreen } from "../screens/ConversationsScreen";
@@ -14,23 +15,27 @@ const Tab = createBottomTabNavigator();
 
 export function SellerTabs() {
   const theme = useTheme();
-  const { unreadChats } = useBadges();
 
   return (
     <Tab.Navigator
-      screenOptions={({ navigation }) => ({
+      screenOptions={({ navigation, route }) => ({
         headerStyle: { backgroundColor: theme.colors.surface },
         headerTintColor: theme.colors.onSurface,
         headerShadowVisible: false,
-        // Notifications are shown as a header bell (top-right), not a bottom tab.
-        headerRight: () => (
-          <HeaderNotifButton
-            onPress={() => {
-              const parent = navigation.getParent();
-              (parent ?? (navigation as any)).navigate("Notifications");
-            }}
-          />
-        ),
+        headerRight: () => {
+          const parent = navigation.getParent();
+          const go = (name: string) => (parent ?? (navigation as any)).navigate(name);
+          if (route.name === "SellerChats") {
+            return <HeaderChatActions onPressPreferences={() => go("Preferences")} onPressNotifications={() => go("Notifications")} />;
+          }
+          // Chats moved from bottom menu to header (left of the notifications bell)
+          return (
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 10, paddingRight: 6 }}>
+              <HeaderChatButton onPress={() => (navigation as any).navigate("SellerChats")} />
+              <HeaderNotifButton onPress={() => go("Notifications")} />
+            </View>
+          );
+        },
         tabBarStyle: {
           position: "absolute",
           left: 16,
@@ -66,10 +71,10 @@ export function SellerTabs() {
         component={ConversationsScreen}
         options={{
           title: "Chatlər",
-          tabBarLabel: "Çat",
-          tabBarIcon: ({ color, size }) => (
-            <TabIcon name="message-text" color={color} size={size} showDot={unreadChats > 0} />
-          ),
+          headerShown: false,
+          // Hide from bottom menu; Chats is accessed from the header (next to notifications)
+          tabBarButton: () => null,
+          tabBarItemStyle: { display: "none" },
         }}
       />
       <Tab.Screen

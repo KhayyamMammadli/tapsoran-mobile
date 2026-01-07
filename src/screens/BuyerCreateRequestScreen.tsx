@@ -1,9 +1,10 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { Image, ScrollView } from "react-native";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import { Image, ScrollView, View } from "react-native";
 import { Screen } from "../components/Screen";
-import { Button, Card, RadioButton, Text, TextInput } from "react-native-paper";
+import { Button, Card, HelperText, RadioButton, Text, TextInput } from "react-native-paper";
 import * as ImagePicker from "expo-image-picker";
-import { api } from "../lib/api";
+import { useFocusEffect } from "@react-navigation/native";
+import { retryGet } from "../lib/http";
 import { Category, RequestScope } from "../types";
 import { API_URL } from "../config";
 
@@ -12,17 +13,36 @@ export function BuyerCreateRequestScreen() {
   const [scope, setScope] = useState<RequestScope>("CATEGORY_SELLERS");
   const [categories, setCategories] = useState<Category[]>([]);
   const [categoryId, setCategoryId] = useState<string>("");
+  const [catErr, setCatErr] = useState<string | null>(null);
 
   const [image, setImage] = useState<ImagePicker.ImagePickerAsset | null>(null);
   const [sending, setSending] = useState(false);
 
-  useEffect(() => {
-    (async () => {
-      const res = await api.get("/categories");
-      setCategories(res.data);
-      if (res.data?.[0]?.id) setCategoryId(res.data[0].id);
-    })();
+  const loadCategories = useCallback(async () => {
+    setCatErr(null);
+    try {
+      const data = await retryGet<Category[]>("/categories", {
+        retries: 3,
+        baseDelayMs: 1200,
+        params: { t: Date.now() },
+      });
+      setCategories(data || []);
+      setCategoryId((prev) => prev || data?.[0]?.id || "");
+    } catch (e: any) {
+      const msg = e?.response?.data?.error || e?.message || "Kateqoriyalar yüklənmədi";
+      setCatErr(String(msg));
+    }
   }, []);
+
+  useEffect(() => {
+    loadCategories();
+  }, [loadCategories]);
+
+  useFocusEffect(
+    useCallback(() => {
+      loadCategories();
+    }, [loadCategories])
+  );
 
   const pickImage = async () => {
     const perm = await ImagePicker.requestCameraPermissionsAsync();
@@ -57,6 +77,7 @@ export function BuyerCreateRequestScreen() {
         });
       }
 
+      const { api } = await import("../lib/api");
       await api.post("/requests", form, { headers: { "Content-Type": "multipart/form-data" } });
       setTitle("");
       setImage(null);
@@ -90,6 +111,15 @@ export function BuyerCreateRequestScreen() {
         <Card>
           <Card.Title title="Kateqoriya" />
           <Card.Content>
+            {catErr ? (
+              <View style={{ gap: 8 }}>
+                <HelperText type="error" visible>
+                  {catErr}
+                </HelperText>
+                <Button onPress={loadCategories}>Yenilə</Button>
+              </View>
+            ) : null}
+
             <RadioButton.Group onValueChange={setCategoryId} value={categoryId}>
               {categories.map((c) => (
                 <RadioButton.Item key={c.id} label={c.name} value={c.id} />
@@ -101,7 +131,9 @@ export function BuyerCreateRequestScreen() {
         <Card>
           <Card.Title title="Şəkil (optional)" />
           <Card.Content>
-            {previewUri ? <Image source={{ uri: previewUri }} style={{ width: "100%", height: 220, borderRadius: 5 }} /> : null}
+            {previewUri ? (
+              <Image source={{ uri: previewUri }} style={{ width: "100%", height: 220, borderRadius: 5 }} />
+            ) : null}
           </Card.Content>
           <Card.Actions>
             <Button onPress={pickImage}>Kamera</Button>

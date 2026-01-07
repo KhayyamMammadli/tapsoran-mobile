@@ -1,5 +1,6 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Alert, Image, View } from "react-native";
+import * as Linking from "expo-linking";
 import {
   Button,
   Card,
@@ -11,10 +12,11 @@ import {
   Chip,
 } from "react-native-paper";
 import { Screen } from "../components/Screen";
-import { api } from "../lib/api";
+import { retryGet } from "../lib/http";
 import { useAuth } from "../state/AuthContext";
 import { Category } from "../types";
 import { API_URL } from "../config";
+import { useIsFocused } from "@react-navigation/native";
 
 type Mode = "login" | "register";
 type Role = "BUYER" | "SELLER";
@@ -33,19 +35,62 @@ export function AuthScreen() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [categoryId, setCategoryId] = useState("");
 
+  const [catLoading, setCatLoading] = useState(false);
+  const [catErr, setCatErr] = useState<string | null>(null);
+  const [catLast, setCatLast] = useState<number | null>(null);
+
+  const isFocused = useIsFocused();
+
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState<string | null>(null);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const res = await api.get("/categories");
-        setCategories(res.data);
-        if (res.data?.[0]?.id) setCategoryId(res.data[0].id);
-      } catch {
-        // ignore
+  const fetchCategories = useCallback(async () => {
+    setCatErr(null);
+    setCatLoading(true);
+    try {
+      // cache buster + no-cache headers (see retryGet)
+      const data = await retryGet<Category[]>("/categories", {
+        retries: 3,
+        baseDelayMs: 1200,
+        params: { t: Date.now() },
+        timeoutMs: 60000,
+      });
+
+      // Defensive: ensure array
+      const list = Array.isArray(data) ? data : [];
+      setCategories(list);
+      if (!categoryId && list?.[0]?.id) setCategoryId(list[0].id);
+      setCatLast(Date.now());
+
+      // If server returns empty, surface it (this is the current issue).
+      if (list.length === 0) {
+        setCatErr(`Server boş kateqoriya qaytardı: ${API_URL}/categories`);
       }
-    })();
+    } catch (e: any) {
+      const status = e?.response?.status;
+      const msg = e?.message;
+      setCatErr(
+        `Kateqoriyalar yüklənmədi (${status || "network"}). ${msg || ""}\n${API_URL}/categories`
+      );
+    } finally {
+      setCatLoading(false);
+    }
+  }, [categoryId]);
+
+  // Load categories when screen opens, and also when switching into Seller Register.
+  useEffect(() => {
+    if (!isFocused) return;
+    if (mode === "register" && role === "SELLER") {
+      // refresh if never loaded or older than 30s
+      const stale = !catLast || Date.now() - catLast > 30_000;
+      if (categories.length === 0 || stale) fetchCategories();
+    }
+  }, [isFocused, mode, role, fetchCategories, categories.length, catLast]);
+
+  // Also preload once at app open (helps first-time users)
+  useEffect(() => {
+    fetchCategories();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const title = useMemo(() => (mode === "login" ? "Daxil ol" : "Qeydiyyat"), [mode]);
@@ -61,7 +106,8 @@ export function AuthScreen() {
           role,
           fullName: fullName.trim(),
           email: email.trim(),
-          password,          ...(role === "SELLER" ? { categoryId } : {}),
+          password,
+          ...(role === "SELLER" ? { categoryId } : {}),
         });
 
         // After a successful registration, DO NOT auto-login.
@@ -92,6 +138,13 @@ export function AuthScreen() {
     !!email &&
     !!password &&
     (mode === "login" || (!!fullName && (role !== "SELLER" || !!categoryId)));
+
+  const openLegal = (type: "PRIVACY" | "TERMS") => {
+    const url = `${API_URL.replace(/\/$/, "")}/legal/${type}`;
+    Linking.openURL(url).catch(() => {
+      Alert.alert("Xəta", "Səhifə açıla bilmədi. İnternet bağlantını yoxlayın.");
+    });
+  };
 
   return (
     <Screen>
@@ -187,6 +240,19 @@ export function AuthScreen() {
           {mode === "register" && role === "SELLER" ? (
             <View style={{ gap: 8 }}>
               <Text style={{ color: theme.colors.onSurfaceVariant }}>Kateqoriya seç</Text>
+              <Text style={{ color: theme.colors.onSurfaceVariant, opacity: 0.7 }}>
+                {catLoading ? "Kateqoriyalar yüklənir…" : `Kateqoriya sayı: ${categories.length}`}
+              </Text>
+
+              {catErr ? (
+                <View style={{ gap: 6 }}>
+                  <Text style={{ color: theme.colors.error }}>{catErr}</Text>
+                  <Button mode="outlined" onPress={fetchCategories} loading={catLoading}>
+                    Yenilə
+                  </Button>
+                </View>
+              ) : null}
+
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
                 {categories.map((c) => (
                   <Chip
@@ -199,6 +265,12 @@ export function AuthScreen() {
                   </Chip>
                 ))}
               </View>
+
+              {!catLoading && categories.length === 0 && !catErr ? (
+                <Button mode="outlined" onPress={fetchCategories}>
+                  Kateqoriyaları yenilə
+                </Button>
+              ) : null}
             </View>
           ) : null}
 
@@ -215,6 +287,40 @@ export function AuthScreen() {
           >
             {mode === "login" ? "Daxil ol" : "Qeydiyyat"}
           </Button>
+
+          {mode === "register" ? (
+            <Text style={{ color: theme.colors.onSurfaceVariant, opacity: 0.85 }}>
+              Qeydiyyatla davam etməklə siz{' '}
+              <Text style={{ color: theme.colors.primary, fontWeight: "700" }} onPress={() => openLegal("TERMS")}>
+                İstifadəçi qaydaları
+              </Text>
+              {' '}və{' '}
+              <Text style={{ color: theme.colors.primary, fontWeight: "700" }} onPress={() => openLegal("PRIVACY")}>
+                Məxfilik siyasəti
+              </Text>
+              {' '}ilə razılaşırsınız.
+            </Text>
+          ) : null}
+
+          {mode === "register" ? (
+            <Text style={{ color: theme.colors.onSurfaceVariant, opacity: 0.85, lineHeight: 18 }}>
+              Qeydiyyatdan keçməklə siz{' '}
+              <Text
+                style={{ color: theme.colors.primary, fontWeight: "700" }}
+                onPress={() => Linking.openURL(`${API_URL.replace(/\/$/, "")}/legal/TERMS`)}
+              >
+                İstifadəçi Qaydaları
+              </Text>
+              {' '}və{' '}
+              <Text
+                style={{ color: theme.colors.primary, fontWeight: "700" }}
+                onPress={() => Linking.openURL(`${API_URL.replace(/\/$/, "")}/legal/PRIVACY`)}
+              >
+                Məxfilik Siyasəti
+              </Text>
+              {' '}ilə razılaşırsınız.
+            </Text>
+          ) : null}
 
           <Text style={{ opacity: 0.55, color: theme.colors.onSurfaceVariant }}>
             API_URL: {API_URL}

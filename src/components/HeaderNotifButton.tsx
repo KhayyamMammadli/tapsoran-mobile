@@ -18,7 +18,6 @@ export function HeaderNotifButton({ onPress }: { onPress: () => void }) {
       hitSlop={10}
       style={({ pressed }) => ({
         opacity: pressed ? 0.7 : 1,
-        marginRight: 10,
         borderRadius: 18,
       })}
       accessibilityRole="button"
@@ -31,7 +30,7 @@ export function HeaderNotifButton({ onPress }: { onPress: () => void }) {
           backgroundColor: theme.colors.surface,
         }}
       >
-        <TabIcon name="bell" color={theme.colors.onSurface} size={24} showDot={unreadNotifs > 0} />
+        <TabIcon name="bell-outline" color={theme.colors.onSurface} size={24} showDot={unreadNotifs > 0} />
       </View>
     </Pressable>
   );

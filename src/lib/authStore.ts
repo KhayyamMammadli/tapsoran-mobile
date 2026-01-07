@@ -8,6 +8,8 @@ export type User = {
   role: "BUYER" | "SELLER" | "SUPER_ADMIN";
   fullName: string;
   email: string;
+  // Public profile image (served via /uploads/... on the API host)
+  avatarUrl?: string | null;
   tip?: string | null;
   categoryId?: string | null;
   blocked?: boolean;

@@ -13,6 +13,8 @@ import { SellerTabs } from "./navigation/SellerTabs";
 import { AdminTabs } from "./navigation/AdminTabs";
 import { AdminChatDetailScreen } from "./screens/admin/AdminChatDetailScreen";
 import { HeaderNotifButton } from "./components/HeaderNotifButton";
+import { BuyerCreateRequestScreen } from "./screens/BuyerCreateRequestScreen";
+import { HeaderChatActions } from "./components/HeaderChatActions";
 
 const Root = createNativeStackNavigator();
 
@@ -90,10 +92,10 @@ export function AppNavigator() {
             />
 
             <Root.Screen
-              name="Chat"
-              component={ChatScreen}
+              name="BuyerCreateRequest"
+              component={BuyerCreateRequestScreen}
               options={({ navigation }) => ({
-                title: "Çat",
+                title: "Sorğu yarat",
                 headerStyle: { backgroundColor: theme.colors.surface },
                 headerTintColor: theme.colors.onSurface,
                 headerShadowVisible: false,
@@ -101,6 +103,12 @@ export function AppNavigator() {
                   <HeaderNotifButton onPress={() => (navigation as any).navigate("Notifications")} />
                 ),
               })}
+            />
+
+            <Root.Screen
+              name="Chat"
+              component={ChatScreen}
+              options={{ headerShown: false }}
             />
           </>
         )}

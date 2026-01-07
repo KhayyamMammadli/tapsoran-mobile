@@ -2,7 +2,7 @@ import React from "react";
 import { Alert, View } from "react-native";
 import { Button, List, Switch, SegmentedButtons, Text, useTheme } from "react-native-paper";
 import * as Location from "expo-location";
-import * as Notifications from "expo-notifications";
+import Constants from "expo-constants";
 import { Screen } from "../components/Screen";
 import { usePrefs } from "../state/PreferencesContext";
 
@@ -113,6 +113,12 @@ export function PreferencesScreen() {
                     POP: { channelId: "sound_pop", sound: "pop.wav" },
                   };
                   const cfg = map[notificationSoundKey] || map.DEFAULT;
+                  const isExpoGo = Constants.appOwnership === "expo";
+                  if (isExpoGo) {
+                    Alert.alert("Push bildirişləri", "Expo Go-də (SDK 53+) remote push bildirişləri dəstəklənmir. Push üçün development build (EAS dev client) və ya APK istifadə edin.");
+                    return;
+                  }
+                  const Notifications = await import("expo-notifications");
                   await Notifications.scheduleNotificationAsync({
                     content: {
                       title: "Test bildirişi",

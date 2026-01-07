@@ -1,9 +1,23 @@
 import { Platform } from "react-native";
-import * as Notifications from "expo-notifications";
 import Constants from "expo-constants";
 
 let notificationsEnabled = true;
 let notificationSound = true;
+
+const defaultChannelId = "default";
+
+/**
+ * Expo Go (SDK 53+) no longer supports remote push notifications via expo-notifications.
+ * We keep the app running by turning push features into no-ops in Expo Go.
+ */
+function isExpoGo() {
+  return Constants.appOwnership === "expo";
+}
+
+async function loadNotifications() {
+  // Dynamically import to avoid triggering Expo Go runtime errors/warnings at module load time.
+  return await import("expo-notifications");
+}
 
 /**
  * Keep notification presentation (foreground) in sync with user settings.
@@ -13,54 +27,49 @@ export function applyNotificationBehavior(opts: { notificationsEnabled: boolean;
   notificationsEnabled = opts.notificationsEnabled;
   notificationSound = opts.notificationSound;
 
-  // Android: configure channels (sound selection works via channelId on Android 8+).
-  if (Platform.OS === "android") {
-    defaultChannelId =
-      !notificationSound ? "silent" :
-      notificationSoundKey === "CHIME" ? "sound_chime" :
-      notificationSoundKey === "DING" ? "sound_ding" :
-      notificationSoundKey === "POP" ? "sound_pop" : "default";
+  if (isExpoGo()) return;
 
-    const channels = [
-      { id: "default", name: "Əsas bildirişlər", sound: "default" as any },
-      { id: "silent", name: "Səssiz bildirişlər", sound: undefined as any },
-      { id: "sound_chime", name: "Bildirişlər (Çınqıltı)", sound: "chime.wav" as any },
-      { id: "sound_ding", name: "Bildirişlər (Zəng)", sound: "ding.wav" as any },
-      { id: "sound_pop", name: "Bildirişlər (Pop)", sound: "pop.wav" as any },
-    ];
+  // fire-and-forget: do not block UI
+  void (async () => {
+    const Notifications = await loadNotifications();
 
-    for (const c of channels) {
-      void Notifications.setNotificationChannelAsync(c.id, {
-        name: c.name,
-        importance: Notifications.AndroidImportance.MAX,
-        sound: c.sound,
-      });
+    // Android: configure channels (sound selection works via channelId on Android 8+).
+    if (Platform.OS === "android") {
+      try {
+        await Notifications.setNotificationChannelAsync(defaultChannelId, {
+          name: "Default",
+          importance: Notifications.AndroidImportance.MAX,
+          sound: notificationSound ? undefined : null,
+        });
+      } catch {
+        // ignore
+      }
     }
-  }
+
+    Notifications.setNotificationHandler({
+      handleNotification: async () => {
+        if (!notificationsEnabled) {
+          return { shouldShowAlert: false, shouldPlaySound: false, shouldSetBadge: false };
+        }
+        return {
+          shouldShowAlert: true,
+          shouldPlaySound: notificationSound,
+          shouldSetBadge: false,
+        };
+      },
+    });
+  })();
 }
 
-// Show notifications even when app is in the foreground
-Notifications.setNotificationHandler({
-  handleNotification: async () => ({
-    shouldShowAlert: notificationsEnabled,
-    shouldPlaySound: notificationsEnabled && notificationSound,
-    shouldSetBadge: false,
-  }),
-});
-
+/**
+ * Register for push notifications (returns Expo push token if available).
+ * In Expo Go this returns null.
+ */
 export async function registerForPushNotificationsAsync(): Promise<string | null> {
-  try {
-    // Expo Go (SDK 53+) doesn't support remote push on Android. Skip to avoid crashes/log spam.
-    if ((Constants as any).appOwnership === "expo") return null;
+  if (isExpoGo()) return null;
 
-    // Android requires a channel
-    if (Platform.OS === "android") {
-      await Notifications.setNotificationChannelAsync("default", {
-        name: "default",
-        importance: Notifications.AndroidImportance.MAX,
-        sound: notificationSound ? "default" : undefined,
-      });
-    }
+  try {
+    const Notifications = await loadNotifications();
 
     const { status: existingStatus } = await Notifications.getPermissionsAsync();
     let finalStatus = existingStatus;
@@ -70,10 +79,10 @@ export async function registerForPushNotificationsAsync(): Promise<string | null
     }
     if (finalStatus !== "granted") return null;
 
-    // In newer Expo SDKs, providing projectId is recommended/required for EAS builds.
     const projectId =
-      (Constants as any)?.expoConfig?.extra?.eas?.projectId ||
-      (Constants as any)?.easConfig?.projectId;
+      Constants.expoConfig?.extra?.eas?.projectId ||
+      (Constants as any).easConfig?.projectId ||
+      (Constants as any).expoConfig?.extra?.eas?.projectId;
 
     const tokenRes = projectId
       ? await Notifications.getExpoPushTokenAsync({ projectId })
@@ -84,7 +93,6 @@ export async function registerForPushNotificationsAsync(): Promise<string | null
     return null;
   }
 }
-
 
 export function getDefaultNotificationChannelId() {
   return defaultChannelId;

@@ -1,13 +1,14 @@
 import React from "react";
+import { View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { useTheme } from "react-native-paper";
-import { useBadges } from "../state/BadgeContext";
-import { TabIcon } from "../components/TabIcon";
 import { HeaderNotifButton } from "../components/HeaderNotifButton";
+import { HeaderChatActions } from "../components/HeaderChatActions";
+import { HeaderChatButton } from "../components/HeaderChatButton";
+import { BuyerTabBar } from "../components/BuyerTabBar";
 
 import { BuyerHomeScreen } from "../screens/BuyerHomeScreen";
-import { BuyerCreateRequestScreen } from "../screens/BuyerCreateRequestScreen";
 import { ConversationsScreen } from "../screens/ConversationsScreen";
 import { SettingsScreen } from "../screens/SettingsScreen";
 
@@ -15,23 +16,29 @@ const Tab = createBottomTabNavigator();
 
 export function BuyerTabs() {
   const theme = useTheme();
-  const { unreadChats } = useBadges();
 
   return (
     <Tab.Navigator
-      screenOptions={({ navigation }) => ({
+      tabBar={(props) => <BuyerTabBar {...props} />}
+      screenOptions={({ navigation, route }) => ({
         headerStyle: { backgroundColor: theme.colors.surface },
         headerTintColor: theme.colors.onSurface,
         headerShadowVisible: false,
-        // Notifications are shown as a header bell (top-right), not a bottom tab.
-        headerRight: () => (
-          <HeaderNotifButton
-            onPress={() => {
-              const parent = navigation.getParent();
-              (parent ?? (navigation as any)).navigate("Notifications");
-            }}
-          />
-        ),
+        headerRight: () => {
+          // In chat screens, show a small "menu" button (preferences) next to the notifications bell.
+          const parent = navigation.getParent();
+          const go = (name: string) => (parent ?? (navigation as any)).navigate(name);
+          if (route.name === "BuyerChats") {
+            return <HeaderChatActions onPressPreferences={() => go("Preferences")} onPressNotifications={() => go("Notifications")} />;
+          }
+          // Chats moved from bottom menu to header (left of the notifications bell)
+          return (
+            <View style={{ flexDirection: "row", alignItems: "center", gap: 10, paddingRight: 10 }}>
+              <HeaderChatButton onPress={() => (navigation as any).navigate("BuyerChats")} />
+              <HeaderNotifButton onPress={() => go("Notifications")} />
+            </View>
+          );
+        },
         tabBarStyle: {
           position: "absolute",
           left: 16,
@@ -55,21 +62,10 @@ export function BuyerTabs() {
         name="BuyerHome"
         component={BuyerHomeScreen}
         options={{
-          title: "Ana səhifə",
-          tabBarLabel: "Ana",
+          title: "Sorğularım",
+          tabBarLabel: "Sorğular",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home-variant" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="BuyerRequest"
-        component={BuyerCreateRequestScreen}
-        options={{
-          title: "Sorğu yarat",
-          tabBarLabel: "Sorğu",
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="magnify-plus" color={color} size={size} />
           ),
         }}
       />
@@ -78,10 +74,10 @@ export function BuyerTabs() {
         component={ConversationsScreen}
         options={{
           title: "Chatlər",
-          tabBarLabel: "Çat",
-          tabBarIcon: ({ color, size }) => (
-            <TabIcon name="message-text" color={color} size={size} showDot={unreadChats > 0} />
-          ),
+          headerShown: false,
+          // Hide from bottom menu (Chat is now in the header)
+          tabBarButton: () => null,
+          tabBarItemStyle: { display: "none" },
         }}
       />
 

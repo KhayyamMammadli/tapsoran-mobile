@@ -20,13 +20,23 @@ export type Conversation = {
   userAId: string;
   userBId: string;
   createdAt: string;
+  // Included fields from API (/conversations)
+  userA?: { id: string; fullName: string; role: string; avatarUrl?: string | null };
+  userB?: { id: string; fullName: string; role: string; avatarUrl?: string | null };
+  acceptedRequest?: any;
+  messages?: Message[];
 };
 
 export type Message = {
   id: string;
   conversationId: string;
   senderId: string;
-  text: string;
+  type?: "TEXT" | "IMAGE" | "AUDIO" | "SYSTEM";
+  text?: string | null;
+  // For IMAGE/AUDIO (served via /uploads/.. on the API host)
+  mediaUrl?: string | null;
+  mediaMime?: string | null;
+  mediaDuration?: number | null;
   createdAt: string;
 };
 
@@ -35,6 +45,8 @@ export type User = {
   role: "BUYER" | "SELLER" | "SUPER_ADMIN";
   fullName: string;
   email: string;
+  // Public profile image (served via /uploads/... on the API host)
+  avatarUrl?: string | null;
   tip?: string | null;
   categoryId?: string | null;
   blocked?: boolean;
