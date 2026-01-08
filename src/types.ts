@@ -7,12 +7,22 @@ export type RequestItem = {
   title: string;
   imageUrl?: string | null;
   scope: RequestScope;
-  categoryId: string;
-  category?: Category;
+  categoryId: string | null;
+  category?: Category | null;
   buyerId: string;
   buyer?: { id: string; fullName: string };
   accepted?: any;
   createdAt: string;
+};
+
+export type AcceptedRequest = {
+  id: string;
+  requestId: string;
+  sellerId: string;
+  sellerNote?: string | null;
+  sellerImageUrl?: string | null;
+  createdAt: string;
+  seller?: { id: string; fullName: string; avatarUrl?: string | null; phone?: string | null; whatsapp?: string | null };
 };
 
 export type Conversation = {
@@ -59,6 +69,7 @@ export type NotificationItem = {
   title: string;
   body: string;
   type?: string | null;
+  data?: any;
   readAt?: string | null;
   createdAt: string;
 };

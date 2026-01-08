@@ -3,7 +3,6 @@ import { NavigationContainer, DefaultTheme as NavDefaultTheme } from "@react-nav
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useAuth } from "./state/AuthContext";
 import { AuthScreen } from "./screens/AuthScreen";
-import { ChatScreen } from "./screens/ChatScreen";
 import { NotificationsScreen } from "./screens/NotificationsScreen";
 import { PreferencesScreen } from "./screens/PreferencesScreen";
 import { ActivityIndicator, View } from "react-native";
@@ -11,16 +10,22 @@ import { Text, useTheme } from "react-native-paper";
 import { BuyerTabs } from "./navigation/BuyerTabs";
 import { SellerTabs } from "./navigation/SellerTabs";
 import { AdminTabs } from "./navigation/AdminTabs";
-import { AdminChatDetailScreen } from "./screens/admin/AdminChatDetailScreen";
 import { HeaderNotifButton } from "./components/HeaderNotifButton";
 import { BuyerCreateRequestScreen } from "./screens/BuyerCreateRequestScreen";
-import { HeaderChatActions } from "./components/HeaderChatActions";
+import { BuyerRequestDetailScreen } from "./screens/BuyerRequestDetailScreen";
+import { AnimatedAppSplash } from "./components/AnimatedAppSplash";
 
 const Root = createNativeStackNavigator();
 
 export function AppNavigator() {
   const { token, user, loading } = useAuth();
   const theme = useTheme();
+  const [showSplash, setShowSplash] = React.useState(true);
+
+  React.useEffect(() => {
+    const t = setTimeout(() => setShowSplash(false), 1100);
+    return () => clearTimeout(t);
+  }, []);
 
   const navTheme = {
     ...NavDefaultTheme,
@@ -33,6 +38,10 @@ export function AppNavigator() {
       primary: theme.colors.primary,
     },
   };
+
+  if (showSplash) {
+    return <AnimatedAppSplash />;
+  }
 
   if (loading) {
     return (
@@ -78,20 +87,6 @@ export function AppNavigator() {
             />
 
             <Root.Screen
-              name="AdminChatDetail"
-              component={AdminChatDetailScreen}
-              options={({ navigation }) => ({
-                title: "Çat (Admin)",
-                headerStyle: { backgroundColor: theme.colors.surface },
-                headerTintColor: theme.colors.onSurface,
-                headerShadowVisible: false,
-                headerRight: () => (
-                  <HeaderNotifButton onPress={() => (navigation as any).navigate("Notifications")} />
-                ),
-              })}
-            />
-
-            <Root.Screen
               name="BuyerCreateRequest"
               component={BuyerCreateRequestScreen}
               options={({ navigation }) => ({
@@ -106,9 +101,17 @@ export function AppNavigator() {
             />
 
             <Root.Screen
-              name="Chat"
-              component={ChatScreen}
-              options={{ headerShown: false }}
+              name="BuyerRequestDetail"
+              component={BuyerRequestDetailScreen}
+              options={({ navigation }) => ({
+                title: "Sorğu detalları",
+                headerStyle: { backgroundColor: theme.colors.surface },
+                headerTintColor: theme.colors.onSurface,
+                headerShadowVisible: false,
+                headerRight: () => (
+                  <HeaderNotifButton onPress={() => (navigation as any).navigate("Notifications")} />
+                ),
+              })}
             />
           </>
         )}

@@ -14,45 +14,58 @@ export function HeroHeader({
   return (
     <View
       style={{
-        borderRadius: 5,
-        padding: 16,
+        borderRadius: 22,
+        padding: 18,
         backgroundColor: theme.colors.primary,
         overflow: "hidden",
       }}
     >
-      {/* Decorative bubbles */}
+      {/* Decorative "glass" blobs (no extra deps) */}
       <View
         style={{
           position: "absolute",
-          right: -30,
-          top: -30,
-          width: 140,
-          height: 140,
-          borderRadius: 70,
-          backgroundColor: "rgba(255,255,255,0.14)",
+          right: -34,
+          top: -34,
+          width: 160,
+          height: 160,
+          borderRadius: 80,
+          backgroundColor: "rgba(255,255,255,0.16)",
         }}
       />
       <View
         style={{
           position: "absolute",
           left: -40,
-          bottom: -50,
-          width: 180,
-          height: 180,
-          borderRadius: 90,
+          bottom: -60,
+          width: 220,
+          height: 220,
+          borderRadius: 110,
           backgroundColor: "rgba(255,255,255,0.10)",
+        }}
+      />
+
+      {/* subtle corner highlight */}
+      <View
+        style={{
+          position: "absolute",
+          right: 14,
+          bottom: 14,
+          width: 54,
+          height: 54,
+          borderRadius: 27,
+          backgroundColor: "rgba(255,255,255,0.12)",
         }}
       />
 
       <Image
         source={require("../../assets/logo.png")}
-        style={{ width: 180, height: 48, resizeMode: "contain" }}
+        style={{ width: 170, height: 44, resizeMode: "contain" }}
       />
 
-      <Text variant="titleLarge" style={{ color: "#fff", marginTop: 8 }}>
+      <Text style={{ color: "#fff", marginTop: 10, fontSize: 22, fontWeight: "900" }}>
         {title}
       </Text>
-      <Text style={{ color: "rgba(255,255,255,0.88)", lineHeight: 20, marginTop: 2 }}>
+      <Text style={{ color: "rgba(255,255,255,0.88)", lineHeight: 20, marginTop: 4, maxWidth: 520 }}>
         {subtitle}
       </Text>
     </View>

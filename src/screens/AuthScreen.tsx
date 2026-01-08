@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { Alert, Image, View } from "react-native";
-import * as Linking from "expo-linking";
+import { Alert, Image, Linking, View } from "react-native";
 import {
   Button,
   Card,
@@ -9,13 +8,14 @@ import {
   Text,
   TextInput,
   useTheme,
-  Chip,
 } from "react-native-paper";
+import { SelectField } from "../components/SelectField";
 import { Screen } from "../components/Screen";
 import { retryGet } from "../lib/http";
 import { useAuth } from "../state/AuthContext";
+import { useToast } from "../state/ToastContext";
 import { Category } from "../types";
-import { API_URL } from "../config";
+import { API_URL, policyLink } from "../config";
 import { useIsFocused } from "@react-navigation/native";
 
 type Mode = "login" | "register";
@@ -24,6 +24,7 @@ type Role = "BUYER" | "SELLER";
 export function AuthScreen() {
   const theme = useTheme();
   const { login, register } = useAuth();
+  const toast = useToast();
 
   const [mode, setMode] = useState<Mode>("login");
   const [role, setRole] = useState<Role>("BUYER");
@@ -31,6 +32,27 @@ export function AuthScreen() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  const [phone, setPhone] = useState("");
+  const [whatsapp, setWhatsapp] = useState("+994");
+
+  const normalizeWhatsapp = (text: string) => {
+    // Keep default +994 prefix for AZ numbers
+    const t = String(text || "").trim();
+    if (!t) return "+994";
+    if (t === "+") return "+994";
+    if (t.startsWith("+994")) return t;
+    // If user types digits without prefix, prepend
+    if (/^[0-9]/.test(t)) return `+994${t}`;
+    // If user types + and digits (other), keep but if it is +994 missing, still allow.
+    return t;
+  };
+
+  const digitsOnly = (s: string) => (s || "").replace(/[^0-9]/g, "");
+  const hasPhone = digitsOnly(phone).length > 0;
+  // "+994" alone is not a valid whatsapp entry
+  const hasWhatsapp = digitsOnly(whatsapp).length > 3;
 
   const [categories, setCategories] = useState<Category[]>([]);
   const [categoryId, setCategoryId] = useState("");
@@ -107,7 +129,13 @@ export function AuthScreen() {
           fullName: fullName.trim(),
           email: email.trim(),
           password,
-          ...(role === "SELLER" ? { categoryId } : {}),
+          ...(role === "SELLER"
+            ? {
+                categoryId,
+                ...(hasPhone ? { phone: phone.trim() } : {}),
+                ...(hasWhatsapp ? { whatsapp: whatsapp.trim() } : {}),
+              }
+            : {}),
         });
 
         // After a successful registration, DO NOT auto-login.
@@ -115,11 +143,9 @@ export function AuthScreen() {
         setMode("login");
         setFullName("");
         setPassword("");
-        Alert.alert(
-          "Uğurlu",
-          "Qeydiyyat tamamlandı. İndi giriş səhifəsindən daxil olun.",
-          [{ text: "Oldu" }]
-        );
+        setPhone("");
+        setWhatsapp("+994");
+        toast.show("Qeydiyyat tamamlandı. İndi giriş səhifəsindən daxil olun.");
       }
     } catch (e: any) {
       const serverErr = e?.response?.data?.error;
@@ -137,11 +163,12 @@ export function AuthScreen() {
   const canSubmit =
     !!email &&
     !!password &&
-    (mode === "login" || (!!fullName && (role !== "SELLER" || !!categoryId)));
+    (mode === "login" ||
+      (!!fullName &&
+        (role !== "SELLER" || (!!categoryId && (hasPhone || hasWhatsapp)))));
 
-  const openLegal = (type: "PRIVACY" | "TERMS") => {
-    const url = `${API_URL.replace(/\/$/, "")}/legal/${type}`;
-    Linking.openURL(url).catch(() => {
+  const openLegal = (type: "privacy" | "terms") => {
+    Linking.openURL(policyLink(type)).catch(() => {
       Alert.alert("Xəta", "Səhifə açıla bilmədi. İnternet bağlantını yoxlayın.");
     });
   };
@@ -151,7 +178,7 @@ export function AuthScreen() {
       {/* Brand hero */}
       <View
         style={{
-          borderRadius: 5,
+          borderRadius: 22,
           padding: 18,
           backgroundColor: theme.colors.primary,
           overflow: "hidden",
@@ -192,10 +219,7 @@ export function AuthScreen() {
       </View>
 
       {/* Auth card */}
-      <Card
-        mode="contained"
-        style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}
-      >
+      <Card mode="elevated" style={{ borderRadius: 22 }}>
         <Card.Content style={{ gap: 12, paddingVertical: 16 }}>
           <SegmentedButtons
             value={mode}
@@ -214,7 +238,7 @@ export function AuthScreen() {
               mode={role === "BUYER" ? "contained" : "outlined"}
               onPress={() => setRole("BUYER")}
               icon="account"
-              style={{ flex: 1, borderRadius: 5 }}
+              style={{ flex: 1, borderRadius: 16 }}
               contentStyle={{ paddingVertical: 4 }}
             >
               Alıcı
@@ -223,7 +247,7 @@ export function AuthScreen() {
               mode={role === "SELLER" ? "contained" : "outlined"}
               onPress={() => setRole("SELLER")}
               icon="store"
-              style={{ flex: 1, borderRadius: 5 }}
+              style={{ flex: 1, borderRadius: 16 }}
               contentStyle={{ paddingVertical: 4 }}
             >
               Satıcı
@@ -235,7 +259,19 @@ export function AuthScreen() {
           ) : null}
 
           <TextInput mode="outlined" label="Email" autoCapitalize="none" value={email} onChangeText={setEmail} />
-          <TextInput mode="outlined" label="Şifrə" secureTextEntry value={password} onChangeText={setPassword} />
+          <TextInput
+            mode="outlined"
+            label="Şifrə"
+            secureTextEntry={!showPassword}
+            value={password}
+            onChangeText={setPassword}
+            right={
+              <TextInput.Icon
+                icon={showPassword ? "eye-off" : "eye"}
+                onPress={() => setShowPassword((v) => !v)}
+              />
+            }
+          />
 
           {mode === "register" && role === "SELLER" ? (
             <View style={{ gap: 8 }}>
@@ -253,18 +289,32 @@ export function AuthScreen() {
                 </View>
               ) : null}
 
-              <View style={{ flexDirection: "row", flexWrap: "wrap", gap: 8 }}>
-                {categories.map((c) => (
-                  <Chip
-                    key={c.id}
-                    selected={categoryId === c.id}
-                    onPress={() => setCategoryId(c.id)}
-                    selectedColor={theme.colors.primary}
-                  >
-                    {c.name}
-                  </Chip>
-                ))}
-              </View>
+              <SelectField
+              label="Kateqoriya"
+              value={categoryId}
+              options={categories.map((c) => ({ label: c.name, value: c.id }))}
+              placeholder={catLoading ? "Yüklənir..." : "Kateqoriya seçin"}
+              disabled={catLoading || categories.length === 0}
+              onChange={(v) => setCategoryId(v)}
+            />
+
+              <TextInput
+                mode="outlined"
+                label="Əlaqə nömrəsi (telefon)"
+                value={phone}
+                keyboardType="phone-pad"
+                onChangeText={setPhone}
+              />
+              <TextInput
+                mode="outlined"
+                label="WhatsApp nömrəsi"
+                value={whatsapp}
+                keyboardType="phone-pad"
+                onChangeText={(t) => setWhatsapp(normalizeWhatsapp(t))}
+              />
+              <HelperText type="info" visible={true}>
+                Satıcı üçün telefon və ya WhatsApp nömrələrindən ən az biri mütləqdir.
+              </HelperText>
 
               {!catLoading && categories.length === 0 && !catErr ? (
                 <Button mode="outlined" onPress={fetchCategories}>
@@ -283,48 +333,24 @@ export function AuthScreen() {
             loading={loading}
             disabled={!canSubmit}
             onPress={submit}
-            style={{ borderRadius: 5, paddingVertical: 6 }}
+            style={{ borderRadius: 16, paddingVertical: 6 }}
           >
             {mode === "login" ? "Daxil ol" : "Qeydiyyat"}
           </Button>
 
           {mode === "register" ? (
-            <Text style={{ color: theme.colors.onSurfaceVariant, opacity: 0.85 }}>
-              Qeydiyyatla davam etməklə siz{' '}
-              <Text style={{ color: theme.colors.primary, fontWeight: "700" }} onPress={() => openLegal("TERMS")}>
+            <Text style={{ color: theme.colors.onSurfaceVariant, opacity: 0.85, lineHeight: 18 }}>
+              Qeydiyyatdan keçməklə siz{' '}
+              <Text style={{ color: theme.colors.primary, fontWeight: "800" }} onPress={() => openLegal("terms")}>
                 İstifadəçi qaydaları
               </Text>
               {' '}və{' '}
-              <Text style={{ color: theme.colors.primary, fontWeight: "700" }} onPress={() => openLegal("PRIVACY")}>
+              <Text style={{ color: theme.colors.primary, fontWeight: "800" }} onPress={() => openLegal("privacy")}>
                 Məxfilik siyasəti
               </Text>
               {' '}ilə razılaşırsınız.
             </Text>
           ) : null}
-
-          {mode === "register" ? (
-            <Text style={{ color: theme.colors.onSurfaceVariant, opacity: 0.85, lineHeight: 18 }}>
-              Qeydiyyatdan keçməklə siz{' '}
-              <Text
-                style={{ color: theme.colors.primary, fontWeight: "700" }}
-                onPress={() => Linking.openURL(`${API_URL.replace(/\/$/, "")}/legal/TERMS`)}
-              >
-                İstifadəçi Qaydaları
-              </Text>
-              {' '}və{' '}
-              <Text
-                style={{ color: theme.colors.primary, fontWeight: "700" }}
-                onPress={() => Linking.openURL(`${API_URL.replace(/\/$/, "")}/legal/PRIVACY`)}
-              >
-                Məxfilik Siyasəti
-              </Text>
-              {' '}ilə razılaşırsınız.
-            </Text>
-          ) : null}
-
-          <Text style={{ opacity: 0.55, color: theme.colors.onSurfaceVariant }}>
-            API_URL: {API_URL}
-          </Text>
         </Card.Content>
       </Card>
     </Screen>

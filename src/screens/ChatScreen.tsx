@@ -87,6 +87,7 @@ export function ChatScreen({ route }: Props) {
   // Report modal
   const [reportOpen, setReportOpen] = useState(false);
   const [reportMsg, setReportMsg] = useState<Message | null>(null);
+  const [reportReason, setReportReason] = useState("");
 
   // Conversation info (for WhatsApp-like header)
   const [title, setTitle] = useState<string>("Çat");
@@ -230,20 +231,30 @@ export function ChatScreen({ route }: Props) {
     if (m.senderId === user?.id) return;
     if (m.type === "SYSTEM") return;
     setReportMsg(m);
+    setReportReason("");
     setReportOpen(true);
   }, [user?.id]);
 
   const sendReport = useCallback(
     async (reason: string) => {
-      if (!reportMsg) return;
+      const r = (reason || "").trim();
+      if (r.length < 3) {
+        setWarn("Şikayət səbəbi ən azı 3 simvol olmalıdır");
+        return;
+      }
+
       setReportOpen(false);
       try {
-        await api.post("/reports", { messageId: reportMsg.id, reason });
+        if (reportMsg) {
+          await api.post("/reports", { messageId: reportMsg.id, reason: r });
+        } else {
+          await api.post(`/reports/conversation/${conversationId}`, { reason: r });
+        }
         setWarn("✅ Şikayət göndərildi. Təşəkkürlər.");
       } catch (e: any) {
         const st = e?.response?.status;
         if (st === 409) {
-          setWarn("ℹ️ Bu mesaj artıq şikayət edilib");
+          setWarn("ℹ️ Bu çat üçün artıq şikayət edilib");
           return;
         }
         setWarn(e?.response?.data?.error || "Şikayət göndərilmədi");
@@ -251,7 +262,7 @@ export function ChatScreen({ route }: Props) {
         setReportMsg(null);
       }
     },
-    [reportMsg]
+    [reportMsg, conversationId]
   );
 
   const sendPickedImage = useCallback(
@@ -596,7 +607,17 @@ export function ChatScreen({ route }: Props) {
             ) : null}
           </Pressable>
 
-          <IconButton icon="dots-vertical" size={20} onPress={() => {}} iconColor={headerText} style={{ margin: 0 }} />
+          <IconButton
+            icon="alert-circle-outline"
+            size={22}
+            onPress={() => {
+              setReportMsg(null);
+              setReportReason("");
+              setReportOpen(true);
+            }}
+            iconColor={headerText}
+            style={{ margin: 0 }}
+          />
         </View>
       </View>
 
@@ -718,17 +739,31 @@ export function ChatScreen({ route }: Props) {
             <Text style={{ fontSize: 12, marginBottom: 12, color: theme.dark ? "#AEBAC1" : "#667085" }}>
               Şikayətiniz admin panelə düşəcək. Qanunsuz alqı-satqı, link və ya əlaqə məlumatı paylaşımı kimi hallarda istifadə edin.
             </Text>
-            <Pressable style={styles.sheetBtn} onPress={() => void sendReport("Narkotik / qanunsuz alqı-satqı") }>
+            <TextInput
+              mode="outlined"
+              label="Səbəb"
+              value={reportReason}
+              onChangeText={setReportReason}
+              multiline
+              placeholder="Məs: Scam etdi, əlaqə məlumatı istədi..."
+              style={{ marginBottom: 10 }}
+            />
+
+            <Pressable style={styles.sheetBtn} onPress={() => { setReportReason("Narkotik / qanunsuz alqı-satqı"); void sendReport("Narkotik / qanunsuz alqı-satqı"); }}>
               <Text style={{ fontSize: 15, color: theme.dark ? "#E9EDEF" : "#111B21" }}>🚫 Qanunsuz alqı-satqı</Text>
             </Pressable>
-            <Pressable style={styles.sheetBtn} onPress={() => void sendReport("Əlaqə məlumatı / sosial şəbəkəyə yönləndirmə") }>
+            <Pressable style={styles.sheetBtn} onPress={() => { setReportReason("Əlaqə məlumatı / sosial şəbəkəyə yönləndirmə"); void sendReport("Əlaqə məlumatı / sosial şəbəkəyə yönləndirmə"); }}>
               <Text style={{ fontSize: 15, color: theme.dark ? "#E9EDEF" : "#111B21" }}>☎️ Əlaqə məlumatı / Telegram</Text>
             </Pressable>
-            <Pressable style={styles.sheetBtn} onPress={() => void sendReport("Təhqir / zorakılıq") }>
+            <Pressable style={styles.sheetBtn} onPress={() => { setReportReason("Təhqir / zorakılıq"); void sendReport("Təhqir / zorakılıq"); }}>
               <Text style={{ fontSize: 15, color: theme.dark ? "#E9EDEF" : "#111B21" }}>⚠️ Təhqir / zorakılıq</Text>
             </Pressable>
-            <Pressable style={styles.sheetBtn} onPress={() => void sendReport("Digər") }>
-              <Text style={{ fontSize: 15, color: theme.dark ? "#E9EDEF" : "#111B21" }}>📝 Digər</Text>
+
+            <Pressable
+              style={[styles.sheetBtn, { justifyContent: "center" }]}
+              onPress={() => void sendReport(reportReason)}
+            >
+              <Text style={{ fontSize: 15, color: theme.colors.primary, fontWeight: "900" }}>Göndər</Text>
             </Pressable>
             <Pressable style={[styles.sheetBtn, { justifyContent: "center" }]} onPress={() => setReportOpen(false)}>
               <Text style={{ fontSize: 15, color: theme.colors.primary, fontWeight: "700" }}>Bağla</Text>

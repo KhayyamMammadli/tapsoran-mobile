@@ -3,8 +3,12 @@ export type RootStackParamList = {
   Tabs: undefined;
   Notifications: undefined;
   Preferences: undefined;
+  // Chat routes are temporarily not used in navigation (feature is hidden),
+  // but we keep the types to avoid breaking compiled screens/components.
   Chat: { conversationId: string };
   AdminChatDetail: { conversationId: string } | undefined;
+  BuyerCreateRequest: undefined;
+  BuyerRequestDetail: { requestId: string };
 };
 
 export type AuthStackParamList = {

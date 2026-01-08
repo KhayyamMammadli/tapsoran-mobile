@@ -23,7 +23,7 @@ export function AdminHomeScreen() {
 
   return (
     <View style={{ flex: 1, padding: 16, gap: 12, backgroundColor: theme.colors.background }}>
-      <Card mode="contained" style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
+      <Card mode="elevated" style={{ borderRadius: 22 }}>
         <Card.Content style={{ gap: 8 }}>
           <Text variant="titleLarge" style={{ fontWeight: "900" }}>
             Super Admin
@@ -35,13 +35,13 @@ export function AdminHomeScreen() {
       </Card>
 
       <View style={{ flexDirection: "row", gap: 12 }}>
-        <Card mode="contained" style={{ flex: 1, borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
+        <Card mode="elevated" style={{ flex: 1, borderRadius: 22 }}>
           <Card.Content>
             <Text style={{ color: theme.colors.onSurfaceVariant }}>İstifadəçilər</Text>
             <Text variant="headlineMedium" style={{ fontWeight: "900" }}>{stats?.users ?? "—"}</Text>
           </Card.Content>
         </Card>
-        <Card mode="contained" style={{ flex: 1, borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
+        <Card mode="elevated" style={{ flex: 1, borderRadius: 22 }}>
           <Card.Content>
             <Text style={{ color: theme.colors.onSurfaceVariant }}>Çatlar</Text>
             <Text variant="headlineMedium" style={{ fontWeight: "900" }}>{stats?.conversations ?? "—"}</Text>
@@ -50,13 +50,13 @@ export function AdminHomeScreen() {
       </View>
 
       <View style={{ flexDirection: "row", gap: 12 }}>
-        <Card mode="contained" style={{ flex: 1, borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
+        <Card mode="elevated" style={{ flex: 1, borderRadius: 22 }}>
           <Card.Content>
             <Text style={{ color: theme.colors.onSurfaceVariant }}>Sorğular</Text>
             <Text variant="headlineMedium" style={{ fontWeight: "900" }}>{stats?.requests ?? "—"}</Text>
           </Card.Content>
         </Card>
-        <Card mode="contained" style={{ flex: 1, borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
+        <Card mode="elevated" style={{ flex: 1, borderRadius: 22 }}>
           <Card.Content>
             <Text style={{ color: theme.colors.onSurfaceVariant }}>Kateqoriyalar</Text>
             <Text variant="headlineMedium" style={{ fontWeight: "900" }}>{stats?.categories ?? "—"}</Text>

@@ -1,11 +1,11 @@
 import React from "react";
 import { RefreshControl, ScrollView, View } from "react-native";
 import { Button, Card, Chip, Text, useTheme } from "react-native-paper";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { Screen } from "../components/Screen";
 import { HeroHeader } from "../components/HeroHeader";
 import { api } from "../lib/api";
 import { useNavigation } from "@react-navigation/native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 type MyRequest = {
   id: string;
@@ -17,14 +17,16 @@ type MyRequest = {
   accepted?: null | {
     id: string;
     createdAt: string;
-    seller?: { id: string; fullName: string; avatarUrl?: string | null };
-    conversation?: { id: string } | null;
+    sellerNote?: string | null;
+    seller?: { id: string; fullName: string; avatarUrl?: string | null; phone?: string | null; whatsapp?: string | null };
   };
 };
 
 export function BuyerHomeScreen() {
   const theme = useTheme();
   const nav = useNavigation<any>();
+  const insets = useSafeAreaInsets();
+  const insets = useSafeAreaInsets();
 
   const [rows, setRows] = React.useState<MyRequest[]>([]);
   const [loading, setLoading] = React.useState(false);
@@ -43,18 +45,22 @@ export function BuyerHomeScreen() {
     void load();
   }, [load]);
 
+  // Extra bottom padding so the last card is never hidden behind the floating bottom bar.
+  const bottomPad = 120 + Math.max(insets.bottom, 0);
+
   return (
-    <Screen>
+    <Screen scroll={false}>
       <HeroHeader
         title="Sorğularım"
-        subtitle="Yeni sorğu yaratmaq üçün aşağıdakı + düyməsinə toxunun."      />
+        subtitle="Sorğularınızı burada izləyin." />
 
       <ScrollView
-        contentContainerStyle={{ gap: 12, paddingBottom: 14 }}
+        contentContainerStyle={{ gap: 12, paddingBottom: bottomPad }}
         refreshControl={<RefreshControl refreshing={loading} onRefresh={load} />}
+        showsVerticalScrollIndicator={false}
       >
         {rows.length === 0 ? (
-          <Card mode="contained" style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
+          <Card mode="elevated" style={{ borderRadius: 22 }}>
             <Card.Content style={{ gap: 8 }}>
               <Text variant="titleMedium">Hələ sorğunuz yoxdur</Text>
               <Text style={{ color: theme.colors.onSurfaceVariant }}>
@@ -66,19 +72,16 @@ export function BuyerHomeScreen() {
         ) : (
           rows.map((r) => {
             const accepted = !!r.accepted;
-            const conversationId = r.accepted?.conversation?.id;
             return (
               <Card
                 key={r.id}
-                mode="contained"
+                mode="elevated"
                 onPress={() => {
-                  if (conversationId) nav.navigate("Chat", { conversationId });
+                  nav.navigate("BuyerRequestDetail", { requestId: r.id });
                 }}
                 style={{
-                  borderRadius: 5,
-                  borderWidth: 1,
-                  borderColor: theme.colors.outlineVariant,
-                  opacity: conversationId ? 1 : 0.98,
+                  borderRadius: 22,
+                  opacity: 0.98,
                 }}
               >
                 <Card.Content style={{ gap: 8 }}>
@@ -101,43 +104,19 @@ export function BuyerHomeScreen() {
                     </Text>
                   ) : (
                     <Text style={{ color: theme.colors.onSurfaceVariant }}>
-                      Satıcı sorğunu qəbul etdikdə buradan birbaşa çata keçə biləcəksiniz.
+                      Satıcı sorğunu qəbul etdikdə buradan detallara baxa biləcəksiniz.
                     </Text>
                   )}
 
-                  {conversationId ? (
-                    <Text style={{ color: theme.colors.primary, fontWeight: "700" }}>
-                      Çata keçmək üçün toxun
-                    </Text>
-                  ) : null}
+                  <Text style={{ color: theme.colors.primary, fontWeight: "700" }}>
+                    Detallara baxmaq üçün toxun
+                  </Text>
                 </Card.Content>
               </Card>
             );
           })
         )}
 
-        <Card mode="contained" style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
-          <Card.Content style={{ gap: 8 }}>
-            <Text variant="titleMedium">Necə işləyir?</Text>
-            <Text style={{ color: theme.colors.onSurfaceVariant }}>
-              1) + düyməsi ilə sorğu yaradın{`\n`}
-              2) Satıcılar sorğunu qəbul etsin{`\n`}
-              3) Çatda razılaşın və alış edin
-            </Text>
-          </Card.Content>
-        </Card>
-
-        <Card mode="contained" style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
-          <Card.Content style={{ gap: 6 }}>
-            <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
-              <MaterialCommunityIcons name="lightbulb-on-outline" size={18} color={theme.colors.onSurfaceVariant} />
-              <Text variant="titleMedium">Məsləhət</Text>
-            </View>
-            <Text style={{ color: theme.colors.onSurfaceVariant }}>
-              Daha tez cavab almaq üçün məhsulun şəklini əlavə et və doğru kateqoriya seç.
-            </Text>
-          </Card.Content>
-        </Card>
       </ScrollView>
     </Screen>
   );

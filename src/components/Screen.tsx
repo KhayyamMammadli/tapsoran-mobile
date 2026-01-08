@@ -35,6 +35,7 @@ export function Screen({
 
 const styles = StyleSheet.create({
   safe: { flex: 1 },
-  innerFixed: { flex: 1, padding: 16, gap: 12 },
-  innerScroll: { padding: 16, gap: 12 },
+  // Slightly larger padding + spacing feels more "modern" and breathable.
+  innerFixed: { flex: 1, padding: 18, gap: 14 },
+  innerScroll: { padding: 18, gap: 14 },
 });

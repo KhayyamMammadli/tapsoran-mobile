@@ -3,6 +3,7 @@ import { Pressable, View } from "react-native";
 import type { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { Text, useTheme } from "react-native-paper";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 /**
  * Buyer bottom bar with a centered (+) action button.
@@ -11,6 +12,7 @@ import { Text, useTheme } from "react-native-paper";
 export function BuyerTabBar(props: BottomTabBarProps) {
   const theme = useTheme();
   const { state, navigation } = props;
+  const insets = useSafeAreaInsets();
 
   const goRoot = (screen: string) => {
     const parent = navigation.getParent();
@@ -62,19 +64,23 @@ export function BuyerTabBar(props: BottomTabBarProps) {
     );
   };
 
+  // Keep the bar above Android navigation buttons / iOS home indicator.
+  const bottomOffset = 12 + Math.max(insets.bottom, 0);
+
   return (
-    <View style={{ position: "absolute", left: 16, right: 16, bottom: 12 }}>
+    <View style={{ position: "absolute", left: 16, right: 16, bottom: bottomOffset }}>
       <View
         style={{
-          height: 62,
+          height: 66,
           backgroundColor: theme.colors.surface,
-          borderRadius: 5,
+          borderRadius: 22,
           borderWidth: 1,
           borderColor: theme.colors.outlineVariant,
           flexDirection: "row",
           alignItems: "center",
           overflow: "hidden",
-          elevation: 10,
+          // Android shadow
+          elevation: 14,
         }}
       >
         {/* Left: Requests */}
@@ -112,8 +118,8 @@ export function BuyerTabBar(props: BottomTabBarProps) {
             alignItems: "center",
             justifyContent: "center",
             backgroundColor: theme.colors.primary,
-            borderWidth: 1,
-            borderColor: theme.colors.primary,
+            borderWidth: 6,
+            borderColor: theme.colors.surface,
             opacity: pressed ? 0.85 : 1,
             elevation: 12,
           })}

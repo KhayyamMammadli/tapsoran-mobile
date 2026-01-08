@@ -42,7 +42,20 @@ const guessLanApiUrl = (): string | null => {
 // IMPORTANT:
 // Android Emulator should always use 10.0.2.2 to reach your computer.
 // Using a LAN IP (e.g. 192.168.x.x) can fail inside the emulator depending on network setup.
-const isAndroidEmulator = Platform.OS === "android" && Constants.isDevice === false;
+//
+// NOTE: In some Expo SDK / Expo Go combinations, `Constants.isDevice` can be unreliable on emulators.
+// So we add a couple of safe heuristics based on device/model names.
+const anyC: any = Constants as any;
+const deviceName = String(anyC?.deviceName || "");
+const androidModel = String(anyC?.platform?.android?.model || "");
+const androidDevice = String(anyC?.platform?.android?.device || "");
+
+const isAndroidEmulator =
+  Platform.OS === "android" &&
+  (Constants.isDevice === false ||
+    /emulator|sdk_gphone|google_sdk|android sdk built for/i.test(deviceName) ||
+    /emulator|sdk_gphone|google_sdk|android sdk built for/i.test(androidModel) ||
+    /emulator|sdk_gphone|google_sdk|android sdk built for/i.test(androidDevice));
 
 const LAN_URL = !isAndroidEmulator ? guessLanApiUrl() : null;
 
@@ -53,4 +66,24 @@ const DEV_URL = (LAN_URL ||
     default: "http://localhost:4000",
   })) as string;
 
-export const API_URL = ENV_URL || (__DEV__ ? DEV_URL : "https://tap-soran-api.onrender.com");
+// IMPORTANT:
+// When running the app with Expo Go, __DEV__ is true.
+// For most teams, you still want the app to talk to the deployed API by default.
+// If you need to use a local backend, set EXPO_PUBLIC_API_URL explicitly.
+export const API_URL = ENV_URL || "https://tap-soran-api.onrender.com";
+
+
+// Separate legal/policy site (optional). If not provided, fall back to the API /legal routes.
+// Example:
+//   EXPO_PUBLIC_POLICY_URL=https://legal.yourdomain.com
+const ENV_POLICY = String(process.env.EXPO_PUBLIC_POLICY_URL || "").trim();
+
+export const POLICY_URL = ENV_POLICY || "";
+
+export const policyLink = (type: "terms" | "privacy") => {
+  const base = (POLICY_URL || `${API_URL.replace(/\/$/, "")}/legal`).replace(/\/$/, "");
+  // If using the API fallback, it expects /legal/:type
+  if (!POLICY_URL) return `${base}/${type.toUpperCase()}`;
+  // If using the separate site, we serve /terms and /privacy at root.
+  return `${base}/${type}`;
+};

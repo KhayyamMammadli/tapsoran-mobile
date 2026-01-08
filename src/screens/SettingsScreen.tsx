@@ -1,13 +1,12 @@
 import React from "react";
-import { Alert, View } from "react-native";
+import { Alert, Linking, View } from "react-native";
 import { Avatar, Button, Card, Divider, List, Text, useTheme } from "react-native-paper";
 import * as ImagePicker from "expo-image-picker";
-import * as Linking from "expo-linking";
 import { Screen } from "../components/Screen";
 import { useAuth } from "../state/AuthContext";
 import { useNavigation } from "@react-navigation/native";
 import { api } from "../lib/api";
-import { API_URL } from "../config";
+import { API_URL, policyLink } from "../config";
 
 function joinUrl(base: string, path?: string | null) {
   if (!path) return null;
@@ -24,9 +23,8 @@ export function SettingsScreen() {
 
   const roleLabel = user?.role === "BUYER" ? "Alıcı" : user?.role === "SELLER" ? "Satıcı" : "Admin";
 
-  const openLegal = (type: "PRIVACY" | "TERMS") => {
-    const url = `${API_URL.replace(/\/$/, "")}/legal/${type}`;
-    Linking.openURL(url).catch(() => Alert.alert("Xəta", "Səhifə açıla bilmədi."));
+  const openLegal = (type: "privacy" | "terms") => {
+    Linking.openURL(policyLink(type)).catch(() => Alert.alert("Xəta", "Səhifə açıla bilmədi."));
   };
 
   const pickAvatar = async () => {
@@ -83,7 +81,7 @@ export function SettingsScreen() {
 
   return (
     <Screen>
-      <Card style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
+      <Card mode="elevated" style={{ borderRadius: 22 }}>
         <Card.Content style={{ gap: 10 }}>
           <View style={{ flexDirection: "row", alignItems: "center", gap: 12 }}>
             {user?.avatarUrl ? (
@@ -102,14 +100,14 @@ export function SettingsScreen() {
           </View>
 
           <View style={{ flexDirection: "row", gap: 8 }}>
-            <Button mode="contained" onPress={pickAvatar} style={{ flex: 1, borderRadius: 5 }}>
+            <Button mode="contained" onPress={pickAvatar} style={{ flex: 1, borderRadius: 16 }}>
               Şəkil seç
             </Button>
             <Button
               mode="outlined"
               onPress={removeAvatar}
               disabled={!user?.avatarUrl}
-              style={{ flex: 1, borderRadius: 5 }}
+              style={{ flex: 1, borderRadius: 16 }}
             >
               Şəkli sil
             </Button>
@@ -119,7 +117,7 @@ export function SettingsScreen() {
 
       <View style={{ height: 12 }} />
 
-      <Card style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
+      <Card mode="elevated" style={{ borderRadius: 22 }}>
         <Card.Content style={{ padding: 0 }}>
           <List.Item
             title="Ayarlar"
@@ -132,18 +130,49 @@ export function SettingsScreen() {
             }}
           />
           <Divider />
+
+          <List.Accordion
+            title="Kömək"
+            description="Necə işləyir və məsləhətlər"
+            left={(props) => <List.Icon {...props} icon="help-circle-outline" />}
+          >
+            <View style={{ paddingLeft: 16, paddingRight: 16, paddingBottom: 12, gap: 8 }}>
+              <Text variant="titleSmall">Necə işləyir?</Text>
+              <Text style={{ color: theme.colors.onSurfaceVariant, lineHeight: 20 }}>
+                1) Alıcı: + düyməsi ilə sorğu yaradın (şəkil əlavə etmək məcburi deyil).
+              </Text>
+              <Text style={{ color: theme.colors.onSurfaceVariant, lineHeight: 20 }}>
+                2) Satıcılar sorğunu qəbul etdikdə əlaqə məlumatları avtomatik görünəcək.
+              </Text>
+              <Text style={{ color: theme.colors.onSurfaceVariant, lineHeight: 20 }}>
+                3) Məhsulu aldıqdan sonra sorğunu tamamlayıb satıcıya rəy və reytinq verə bilərsiniz.
+              </Text>
+
+              <Divider />
+
+              <Text variant="titleSmall">Məsləhətlər</Text>
+              <Text style={{ color: theme.colors.onSurfaceVariant, lineHeight: 20 }}>
+                • Doğru kateqoriya seçin ki, sorğu yalnız uyğun satıcılara getsin.
+              </Text>
+              <Text style={{ color: theme.colors.onSurfaceVariant, lineHeight: 20 }}>
+                • Şəkil əlavə etsəniz, satıcı məhsulu daha dəqiq anlayır və daha tez cavab verir.
+              </Text>
+            </View>
+          </List.Accordion>
+
+          <Divider />
           <List.Item
             title="İstifadəçi qaydaları"
             description="Şərtlər və qaydalar"
             left={(props) => <List.Icon {...props} icon="file-document-outline" />}
-            onPress={() => Linking.openURL(`${API_URL.replace(/\/$/, "")}/legal/TERMS`).catch(() => {})}
+            onPress={() => openLegal("terms")}
           />
           <Divider />
           <List.Item
             title="Məxfilik siyasəti"
             description="Məxfilik və şəxsi məlumatlar"
             left={(props) => <List.Icon {...props} icon="shield-account-outline" />}
-            onPress={() => Linking.openURL(`${API_URL.replace(/\/$/, "")}/legal/PRIVACY`).catch(() => {})}
+            onPress={() => openLegal("privacy")}
           />
           <Divider />
           <List.Item

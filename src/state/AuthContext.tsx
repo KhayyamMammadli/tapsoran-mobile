@@ -15,7 +15,7 @@ type AuthState = {
    * Register SHOULD NOT auto-login.
    * After success, UI should switch user to Login screen.
    */
-  register: (payload: { role: "BUYER" | "SELLER"; fullName: string; email: string; password: string; categoryId?: string }) => Promise<void>;
+  register: (payload: { role: "BUYER" | "SELLER"; fullName: string; email: string; password: string; categoryId?: string; phone?: string; whatsapp?: string }) => Promise<void>;
   /** Update current user object (e.g. after avatar upload). Persists to secure storage. */
   updateUser: (patch: Partial<User>) => Promise<void>;
   logout: () => Promise<void>;
@@ -163,7 +163,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     wireSocket(res.data.token);
   };
 
-  const register = async (payload: { role: "BUYER" | "SELLER"; fullName: string; email: string; password: string; categoryId?: string }) => {
+  const register = async (payload: { role: "BUYER" | "SELLER"; fullName: string; email: string; password: string; categoryId?: string; phone?: string; whatsapp?: string }) => {
     // IMPORTANT: registration should NOT auto-login.
     // Backend may return token/user, but we intentionally ignore it.
     await api.post("/auth/register", payload);

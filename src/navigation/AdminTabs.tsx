@@ -2,20 +2,20 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { useTheme } from "react-native-paper";
-import { useBadges } from "../state/BadgeContext";
-import { TabIcon } from "../components/TabIcon";
+// Chat is temporarily hidden, so we don't need chat badges.
 import { HeaderNotifButton } from "../components/HeaderNotifButton";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { AdminHomeScreen } from "../screens/admin/AdminHomeScreen";
 import { AdminUsersScreen } from "../screens/admin/AdminUsersScreen";
-import { AdminChatsScreen } from "../screens/admin/AdminChatsScreen";
 import { SettingsScreen } from "../screens/SettingsScreen";
 
 const Tab = createBottomTabNavigator();
 
 export function AdminTabs() {
   const theme = useTheme();
-  const { unreadChats } = useBadges();
+  const insets = useSafeAreaInsets();
+  const bottomOffset = 12 + Math.max(insets.bottom, 0);
 
   return (
     <Tab.Navigator
@@ -36,9 +36,9 @@ export function AdminTabs() {
           position: "absolute",
           left: 16,
           right: 16,
-          bottom: 12,
-          borderRadius: 5,
-          height: 62,
+          bottom: bottomOffset,
+          borderRadius: 22,
+          height: 66,
           paddingBottom: 8,
           paddingTop: 6,
           backgroundColor: theme.colors.surface,
@@ -70,17 +70,6 @@ export function AdminTabs() {
           tabBarLabel: "İstifadəçilər",
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="account-group" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="AdminChats"
-        component={AdminChatsScreen}
-        options={{
-          title: "Chatlər",
-          tabBarLabel: "Çat",
-          tabBarIcon: ({ color, size }) => (
-            <TabIcon name="message-text" color={color} size={size} showDot={unreadChats > 0} />
           ),
         }}
       />

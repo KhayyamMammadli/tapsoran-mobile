@@ -3,11 +3,12 @@ import { View, FlatList } from "react-native";
 import { useTheme, Text, Card, Button, Chip } from "react-native-paper";
 import { api } from "../lib/api";
 import type { NotificationItem } from "../types";
-import { useFocusEffect } from "@react-navigation/native";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import { useBadges } from "../state/BadgeContext";
 
 export function NotificationsScreen() {
   const theme = useTheme();
+  const nav = useNavigation<any>();
   const { syncFromNotifications } = useBadges();
   const [items, setItems] = React.useState<NotificationItem[]>([]);
   const [loading, setLoading] = React.useState(false);
@@ -36,8 +37,8 @@ export function NotificationsScreen() {
   };
 
   return (
-    <View style={{ flex: 1, padding: 16, gap: 12, backgroundColor: theme.colors.background }}>
-      <Card mode="contained" style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
+    <View style={{ flex: 1, padding: 18, gap: 14, backgroundColor: theme.colors.background }}>
+      <Card mode="elevated" style={{ borderRadius: 22 }}>
         <Card.Content style={{ gap: 6 }}>
           <Text variant="titleLarge" style={{ fontWeight: "900" }}>
             Bildirişlər
@@ -45,7 +46,7 @@ export function NotificationsScreen() {
           <Text style={{ color: theme.colors.onSurfaceVariant }}>
             Bloklama səbəbi və digər sistem bildirişləri burada görünəcək.
           </Text>
-          <Button mode="contained" onPress={markAllRead} disabled={!items.some((x) => !x.readAt)}>
+          <Button mode="contained" onPress={markAllRead} style={{ borderRadius: 16 }} disabled={!items.some((x) => !x.readAt)}>
             Hamısını oxundu et
           </Button>
         </Card.Content>
@@ -57,8 +58,14 @@ export function NotificationsScreen() {
         refreshing={loading}
         onRefresh={load}
         contentContainerStyle={{ gap: 12, paddingBottom: 90 }}
-        renderItem={({ item }) => (
-          <Card mode="contained" style={{ borderRadius: 5, borderWidth: 1, borderColor: theme.colors.outlineVariant }}>
+        renderItem={({ item }) => {
+          const requestId = item?.type === "REQUEST_ACCEPTED" ? item?.data?.requestId : null;
+          return (
+          <Card
+            mode="elevated"
+            style={{ borderRadius: 22 }}
+            onPress={requestId ? () => nav.navigate("BuyerRequestDetail", { requestId }) : undefined}
+          >
             <Card.Content style={{ gap: 8 }}>
               <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", gap: 8 }}>
                 <View style={{ flexDirection: "row", alignItems: "center", gap: 8 }}>
@@ -89,7 +96,8 @@ export function NotificationsScreen() {
               </Text>
             </Card.Content>
           </Card>
-        )}
+        );
+        }}
         ListEmptyComponent={
           <Text style={{ color: theme.colors.onSurfaceVariant, textAlign: "center", marginTop: 16 }}>
             Bildiriş yoxdur
