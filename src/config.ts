@@ -70,7 +70,17 @@ const DEV_URL = (LAN_URL ||
 // When running the app with Expo Go, __DEV__ is true.
 // For most teams, you still want the app to talk to the deployed API by default.
 // If you need to use a local backend, set EXPO_PUBLIC_API_URL explicitly.
-export const API_URL = ENV_URL || "https://tap-soran-api.onrender.com";
+//
+// NOTE:
+// A very common production misconfiguration is setting EXPO_PUBLIC_API_URL to something like:
+//   https://your-api.onrender.com/auth
+// or
+//   https://your-api.onrender.com/api
+// In our backend, routes are mounted at the root (e.g. /auth/login), so adding /auth or /api
+// causes requests to hit protected middleware and return 401 Unauthorized.
+const RAW_API_URL = (ENV_URL || "https://tap-soran-api.onrender.com").trim();
+const STRIPPED_API_URL = RAW_API_URL.replace(/\/+$/, "").replace(/\/(api|auth)$/i, "");
+export const API_URL = STRIPPED_API_URL;
 
 
 // Separate legal/policy site (optional). If not provided, fall back to the API /legal routes.

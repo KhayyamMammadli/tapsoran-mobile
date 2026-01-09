@@ -5,7 +5,7 @@ import { Text, useTheme } from "react-native-paper";
 /**
  * App start splash (in-app) – shown briefly on launch.
  * - Full-screen brand color background
- * - Centered "TapSoran" typed left-to-right (typewriter) with blinking caret
+ * - Centered "TapTəklif" typed left-to-right (typewriter) with blinking caret
  */
 export function AnimatedAppSplash() {
   const theme = useTheme();
@@ -13,7 +13,7 @@ export function AnimatedAppSplash() {
   const caretOpacity = useRef(new Animated.Value(1)).current;
   const [idx, setIdx] = useState(0);
 
-  const full = "TapSoran";
+  const full = "TapTəklif";
   const shown = full.slice(0, idx);
 
   const bg = theme.colors.primary;

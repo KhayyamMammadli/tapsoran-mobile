@@ -12,10 +12,13 @@ type AuthState = {
   loading: boolean;
   login: (email: string, password: string, role: "BUYER" | "SELLER") => Promise<void>;
   /**
-   * Register SHOULD NOT auto-login.
-   * After success, UI should switch user to Login screen.
+   * Email OTP registration flow:
+   * 1) Request OTP (sends code to email)
+   * 2) Verify OTP (creates user + returns token) => auto-login
    */
-  register: (payload: { role: "BUYER" | "SELLER"; fullName: string; email: string; password: string; categoryId?: string; phone?: string; whatsapp?: string }) => Promise<void>;
+  requestRegisterOtp: (payload: { role: "BUYER" | "SELLER"; fullName: string; email: string; password: string; categoryId?: string; phone?: string; whatsapp?: string }) => Promise<{ expiresAt?: string; debugCode?: string } | void>;
+  verifyRegisterOtp: (email: string, code: string) => Promise<void>;
+  resendRegisterOtp: (email: string) => Promise<{ expiresAt?: string; debugCode?: string } | void>;
   /** Update current user object (e.g. after avatar upload). Persists to secure storage. */
   updateUser: (patch: Partial<User>) => Promise<void>;
   logout: () => Promise<void>;
@@ -151,22 +154,35 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     return () => setAuthErrorHandler(null);
   }, []);
 
+  const applySession = async (tokenValue: string, userValue: User) => {
+    await setToken(tokenValue);
+    await setUser(userValue);
+    setTok(tokenValue);
+    setUsr(userValue);
+    disconnectSocket();
+    wireSocket(tokenValue);
+  };
+
   // NOTE: Backend enforces role for non-super-admin users.
   // Mobile must send the selected role (BUYER/SELLER) during login.
   const login = async (email: string, password: string, role: "BUYER" | "SELLER") => {
     const res = await api.post("/auth/login", { email, password, role });
-    await setToken(res.data.token);
-    await setUser(res.data.user);
-    setTok(res.data.token);
-    setUsr(res.data.user);
-    disconnectSocket();
-    wireSocket(res.data.token);
+    await applySession(res.data.token, res.data.user);
   };
 
-  const register = async (payload: { role: "BUYER" | "SELLER"; fullName: string; email: string; password: string; categoryId?: string; phone?: string; whatsapp?: string }) => {
-    // IMPORTANT: registration should NOT auto-login.
-    // Backend may return token/user, but we intentionally ignore it.
-    await api.post("/auth/register", payload);
+  const requestRegisterOtp = async (payload: { role: "BUYER" | "SELLER"; fullName: string; email: string; password: string; categoryId?: string; phone?: string; whatsapp?: string }) => {
+    const res = await api.post("/auth/register/request-otp", payload);
+    return res.data;
+  };
+
+  const resendRegisterOtp = async (email: string) => {
+    const res = await api.post("/auth/register/resend-otp", { email });
+    return res.data;
+  };
+
+  const verifyRegisterOtp = async (email: string, code: string) => {
+    const res = await api.post("/auth/register/verify-otp", { email, code });
+    await applySession(res.data.token, res.data.user);
   };
 
   const updateUser = async (patch: Partial<User>) => {
@@ -185,7 +201,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setUsr(null);
   };
 
-  const value = useMemo(() => ({ token, user, loading, login, register, updateUser, logout }), [token, user, loading]);
+  const value = useMemo(
+    () => ({ token, user, loading, login, requestRegisterOtp, verifyRegisterOtp, resendRegisterOtp, updateUser, logout }),
+    [token, user, loading]
+  );
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

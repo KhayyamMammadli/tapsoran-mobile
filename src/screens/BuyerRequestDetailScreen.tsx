@@ -295,17 +295,8 @@ export function BuyerRequestDetailScreen() {
                   </Text>
                 )}
 
-                {sellerImage ? (
-                  <Card mode="elevated" style={{ borderRadius: 18, backgroundColor: theme.colors.surfaceVariant, marginTop: 10 }}>
-                    <Card.Content style={{ gap: 10 }}>
-                      <Text style={{ fontWeight: "800" }}>Satıcının göndərdiyi şəkil</Text>
-                      <Image3DPreview uri={sellerImage} height={240} borderRadius={18} />
-                      <Text style={{ color: theme.colors.onSurfaceVariant, fontSize: 12 }}>
-                        3D görüntü: şəkli barmağınla hərəkət etdir.
-                      </Text>
-                    </Card.Content>
-                  </Card>
-                ) : null}
+                
+
               </Card.Content>
             </Card>
           </>

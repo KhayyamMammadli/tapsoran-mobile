@@ -3,6 +3,7 @@ import { NavigationContainer, DefaultTheme as NavDefaultTheme } from "@react-nav
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useAuth } from "./state/AuthContext";
 import { AuthScreen } from "./screens/AuthScreen";
+import { VerifyOtpScreen } from "./screens/VerifyOtpScreen";
 import { NotificationsScreen } from "./screens/NotificationsScreen";
 import { PreferencesScreen } from "./screens/PreferencesScreen";
 import { ActivityIndicator, View } from "react-native";
@@ -56,7 +57,19 @@ export function AppNavigator() {
     <NavigationContainer theme={navTheme}>
       <Root.Navigator>
         {!token || !user ? (
-          <Root.Screen name="Auth" component={AuthScreen} options={{ headerShown: false }} />
+          <>
+            <Root.Screen name="Auth" component={AuthScreen} options={{ headerShown: false }} />
+            <Root.Screen
+              name="VerifyOtp"
+              component={VerifyOtpScreen}
+              options={{
+                title: "Email təsdiqi",
+                headerStyle: { backgroundColor: theme.colors.surface },
+                headerTintColor: theme.colors.onSurface,
+                headerShadowVisible: false,
+              }}
+            />
+          </>
         ) : (
           <>
             <Root.Screen

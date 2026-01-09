@@ -16,15 +16,16 @@ import { useAuth } from "../state/AuthContext";
 import { useToast } from "../state/ToastContext";
 import { Category } from "../types";
 import { API_URL, policyLink } from "../config";
-import { useIsFocused } from "@react-navigation/native";
+import { useIsFocused, useNavigation } from "@react-navigation/native";
 
 type Mode = "login" | "register";
 type Role = "BUYER" | "SELLER";
 
 export function AuthScreen() {
   const theme = useTheme();
-  const { login, register } = useAuth();
+  const { login, requestRegisterOtp } = useAuth();
   const toast = useToast();
+  const navigation = useNavigation<any>();
 
   const [mode, setMode] = useState<Mode>("login");
   const [role, setRole] = useState<Role>("BUYER");
@@ -124,7 +125,7 @@ export function AuthScreen() {
       if (mode === "login") {
         await login(email.trim(), password, role);
       } else {
-        await register({
+        const otpRes = await requestRegisterOtp({
           role,
           fullName: fullName.trim(),
           email: email.trim(),
@@ -138,19 +139,24 @@ export function AuthScreen() {
             : {}),
         });
 
-        // After a successful registration, DO NOT auto-login.
-        // Switch to login form so user can choose role and sign in.
-        setMode("login");
-        setFullName("");
-        setPassword("");
-        setPhone("");
-        setWhatsapp("+994");
-        toast.show("Qeydiyyat tamamlandı. İndi giriş səhifəsindən daxil olun.");
+        // Go to OTP verification screen
+        navigation.navigate("VerifyOtp", {
+          email: email.trim(),
+          role,
+          debugCode: otpRes?.debugCode,
+        });
+        toast.show("Təsdiq kodu emailinizə göndərildi.");
       }
     } catch (e: any) {
       const serverErr = e?.response?.data?.error;
       const msg = e?.message;
-      if (!serverErr && msg && String(msg).toLowerCase().includes("network")) {
+      if (serverErr === "Unauthorized" && mode === "register") {
+        setErr(
+          `Unauthorized (401). Adətən API_URL səhv yazılanda olur.\n` +
+            `API_URL yalnız domen olmalıdır (məs: https://...onrender.com). /api və ya /auth əlavə etmə.\n\n` +
+            `Hal-hazırda: ${API_URL}`
+        );
+      } else if (!serverErr && msg && String(msg).toLowerCase().includes("network")) {
         setErr(`Serverə qoşulmaq olmur. API_URL: ${API_URL}`);
       } else {
         setErr(serverErr || msg || "Xəta baş verdi");

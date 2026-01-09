@@ -26,7 +26,6 @@ export function BuyerHomeScreen() {
   const theme = useTheme();
   const nav = useNavigation<any>();
   const insets = useSafeAreaInsets();
-  const insets = useSafeAreaInsets();
 
   const [rows, setRows] = React.useState<MyRequest[]>([]);
   const [loading, setLoading] = React.useState(false);
