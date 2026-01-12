@@ -131,6 +131,22 @@ export function SettingsScreen() {
           />
           <Divider />
 
+          {user?.role === "SELLER" && (
+            <>
+              <List.Item
+                title="Satıcı profili"
+                description="Kateqoriyalar, qiymət aralığı, lokasiya"
+                left={(props) => <List.Icon {...props} icon="briefcase-outline" />}
+                right={(props) => <List.Icon {...props} icon="chevron-right" />}
+                onPress={() => {
+                  const parent = navigation.getParent?.();
+                  (parent ?? navigation).navigate("SellerProfileSettings");
+                }}
+              />
+              <Divider />
+            </>
+          )}
+
           <List.Accordion
             title="Kömək"
             description="Necə işləyir və məsləhətlər"

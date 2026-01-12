@@ -9,6 +9,7 @@ export type RootStackParamList = {
   AdminChatDetail: { conversationId: string } | undefined;
   BuyerCreateRequest: undefined;
   BuyerRequestDetail: { requestId: string };
+  SellerProfileSettings: undefined;
 };
 
 export type AuthStackParamList = {

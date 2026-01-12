@@ -5,18 +5,936 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7bb0457c-41c3-4103-b18d-6c85ae53dbec" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/splash.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/splash.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.bin/fingerprint" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/fingerprint" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/image-utils/build/Image.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/image-utils/build/Image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/image-utils/build/Image.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/image-utils/build/Image.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/image-utils/build/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/image-utils/build/env.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/image-utils/build/env.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/image-utils/build/env.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/image-utils/build/sharp.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/image-utils/build/sharp.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/image-utils/build/sharp.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/image-utils/build/sharp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/image-utils/build/sharp.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/image-utils/build/sharp.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@expo/image-utils/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@expo/image-utils/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-application/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-application/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/android/src/main/java/expo/modules/application/ApplicationModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-application/android/src/main/java/expo/modules/application/ApplicationModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/build/Application.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-application/build/Application.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/build/Application.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-application/build/Application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/build/Application.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-application/build/Application.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/expo-module.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-application/expo-module.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/ios/ApplicationModule.swift" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-application/ios/ApplicationModule.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/ios/EXApplication.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-application/ios/EXApplication.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5-sources.jar.md5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5-sources.jar.sha1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5-sources.jar.sha256" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5-sources.jar.sha512" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5.aar.md5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5.aar.sha1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5.aar.sha256" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5.aar.sha512" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5.module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5.module.md5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5.module.sha1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5.module.sha256" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5.module.sha512" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5.pom" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5.pom.md5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5.pom.sha1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5.pom.sha256" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/6.1.5/expo.modules.application-6.1.5.pom.sha512" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/maven-metadata.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/maven-metadata.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/maven-metadata.xml.md5" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/maven-metadata.xml.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/maven-metadata.xml.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/maven-metadata.xml.sha1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/maven-metadata.xml.sha256" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/maven-metadata.xml.sha256" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/maven-metadata.xml.sha512" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-application/local-maven-repo/host/exp/exponent/expo.modules.application/maven-metadata.xml.sha512" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-application/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-application/src/Application.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-application/src/Application.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-constants/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-constants/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-constants/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-constants/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-constants/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-constants/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-modules-autolinking/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-modules-autolinking/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-modules-autolinking/android/expo-gradle-plugin/expo-autolinking-plugin-shared/src/main/kotlin/expo/modules/plugin/AutolinkigCommandBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-modules-autolinking/android/expo-gradle-plugin/expo-autolinking-plugin-shared/src/main/kotlin/expo/modules/plugin/AutolinkigCommandBuilder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-modules-autolinking/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-modules-autolinking/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-modules-autolinking/scripts/android/autolinking_implementation.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-modules-autolinking/scripts/android/autolinking_implementation.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-modules-autolinking/scripts/ios/autolinking_manager.rb" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-modules-autolinking/scripts/ios/autolinking_manager.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-modules-autolinking/scripts/ios/project_integrator.rb" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-modules-autolinking/scripts/ios/project_integrator.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/NotificationsPackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/NotificationsPackage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/notifications/NotificationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/notifications/NotificationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/notifications/emitting/NotificationsEmitter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/notifications/emitting/NotificationsEmitter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/notifications/enums/NotificationImportance.java" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/notifications/enums/NotificationImportance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/notifications/handling/NotificationsHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/notifications/handling/NotificationsHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/notifications/interfaces/NotificationManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/notifications/model/RemoteNotificationContent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/notifications/model/RemoteNotificationContent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/service/NotificationForwarderActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/service/NotificationForwarderActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/service/NotificationsService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/service/NotificationsService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/service/delegates/ExpoHandlingDelegate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/service/delegates/ExpoHandlingDelegate.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/service/delegates/ExpoNotificationLifecycleListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/service/delegates/ExpoNotificationLifecycleListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/service/delegates/SharedPreferencesNotificationCategoriesStore.kt" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/service/delegates/SharedPreferencesNotificationCategoriesStore.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/tokens/PushTokenModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/android/src/main/java/expo/modules/notifications/tokens/PushTokenModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/NotificationChannelManager.types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/NotificationChannelManager.types.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/NotificationChannelManager.types.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/NotificationChannelManager.types.d.ts.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/NotificationChannelManager.types.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/NotificationChannelManager.types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/NotificationChannelManager.types.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/NotificationChannelManager.types.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/NotificationsEmitter.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/NotificationsEmitter.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/NotificationsEmitter.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/NotificationsEmitter.d.ts.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/NotificationsEmitter.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/NotificationsEmitter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/NotificationsEmitter.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/NotificationsEmitter.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/TokenEmitter.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/TokenEmitter.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/TokenEmitter.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/TokenEmitter.d.ts.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/TokenEmitter.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/TokenEmitter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/TokenEmitter.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/TokenEmitter.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/getDevicePushTokenAsync.web.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/getDevicePushTokenAsync.web.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/index.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/index.d.ts.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/index.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/presentNotificationAsync.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/presentNotificationAsync.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/presentNotificationAsync.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/presentNotificationAsync.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/registerTaskAsync.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/registerTaskAsync.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/registerTaskAsync.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/registerTaskAsync.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/registerTaskAsync.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/registerTaskAsync.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/scheduleNotificationAsync.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/scheduleNotificationAsync.d.ts.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/scheduleNotificationAsync.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/scheduleNotificationAsync.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/scheduleNotificationAsync.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/scheduleNotificationAsync.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/setNotificationChannelAsync.android.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/setNotificationChannelAsync.android.d.ts.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/setNotificationChannelAsync.android.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/setNotificationChannelAsync.android.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/setNotificationChannelAsync.android.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/setNotificationChannelAsync.android.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/useLastNotificationResponse.d.ts.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/useLastNotificationResponse.d.ts.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/useLastNotificationResponse.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/useLastNotificationResponse.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/build/useLastNotificationResponse.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/build/useLastNotificationResponse.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/expo-module.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/expo-module.config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/ios/EXNotifications/Badge/BadgeModule.swift" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/ios/EXNotifications/Badge/BadgeModule.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/ios/EXNotifications/Notifications/Background/BackgroundModule.swift" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/ios/EXNotifications/Notifications/Background/BackgroundModule.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/ios/EXNotifications/Notifications/Categories/CategoriesModule.swift" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/ios/EXNotifications/Notifications/Categories/CategoriesModule.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/ios/EXNotifications/PushToken/PushTokenModule.swift" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/ios/EXNotifications/PushToken/PushTokenModule.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4-sources.jar.md5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4-sources.jar.sha1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4-sources.jar.sha256" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4-sources.jar.sha512" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4.aar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4.aar.md5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4.aar.sha1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4.aar.sha256" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4.aar.sha512" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4.module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4.module.md5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4.module.sha1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4.module.sha256" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4.module.sha512" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4.pom" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4.pom.md5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4.pom.sha1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4.pom.sha256" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/0.31.4/expo.modules.notifications-0.31.4.pom.sha512" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/maven-metadata.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/maven-metadata.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/maven-metadata.xml.md5" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/maven-metadata.xml.md5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/maven-metadata.xml.sha1" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/maven-metadata.xml.sha1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/maven-metadata.xml.sha256" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/maven-metadata.xml.sha256" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/maven-metadata.xml.sha512" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/local-maven-repo/host/exp/exponent/expo.modules.notifications/maven-metadata.xml.sha512" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/.bin/glob" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/.bin/sucrase" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/.bin/sucrase-node" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/Plugin.types.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/Plugin.types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/Plugin.types.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/AllowBackup.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/AllowBackup.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/AllowBackup.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/BuildProperties.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/BuildProperties.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/BuildProperties.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Colors.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Colors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Colors.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/EasBuild.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/EasBuild.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/EasBuild.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/EasBuildGradleScript.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/EasBuildGradleScript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/EasBuildGradleScript.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/GoogleMapsApiKey.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/GoogleMapsApiKey.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/GoogleMapsApiKey.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/GoogleServices.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/GoogleServices.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/GoogleServices.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/IntentFilters.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/IntentFilters.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/IntentFilters.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Locales.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Locales.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Locales.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Manifest.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Manifest.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Manifest.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Name.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Name.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Name.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Orientation.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Orientation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Orientation.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Package.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Package.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Package.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Paths.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Paths.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Paths.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Permissions.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Permissions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Permissions.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/PrimaryColor.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/PrimaryColor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/PrimaryColor.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Properties.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Properties.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Properties.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Resources.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Resources.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Resources.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Scheme.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Scheme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Scheme.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/StatusBar.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/StatusBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/StatusBar.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Strings.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Strings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Strings.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Styles.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Styles.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Styles.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Updates.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Updates.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Updates.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Version.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Version.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/Version.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/WindowSoftInputMode.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/WindowSoftInputMode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/WindowSoftInputMode.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/codeMod.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/codeMod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/codeMod.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/android/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Bitcode.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Bitcode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Bitcode.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/BuildProperties.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/BuildProperties.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/BuildProperties.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/BuildScheme.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/BuildScheme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/BuildScheme.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/BundleIdentifier.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/BundleIdentifier.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/BundleIdentifier.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/DevelopmentTeam.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/DevelopmentTeam.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/DevelopmentTeam.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/DeviceFamily.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/DeviceFamily.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/DeviceFamily.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Entitlements.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Entitlements.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Entitlements.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Google.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Google.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Google.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/IosConfig.types.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/IosConfig.types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/IosConfig.types.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Locales.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Locales.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Locales.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Maps.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Maps.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Maps.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Name.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Name.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Name.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Orientation.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Orientation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Orientation.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Paths.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Paths.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Paths.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Permissions.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Permissions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Permissions.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/PrivacyInfo.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/PrivacyInfo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/PrivacyInfo.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/ProvisioningProfile.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/ProvisioningProfile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/ProvisioningProfile.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/RequiresFullScreen.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/RequiresFullScreen.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/RequiresFullScreen.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Scheme.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Scheme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Scheme.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Target.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Target.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Target.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Updates.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Updates.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Updates.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/UsesNonExemptEncryption.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/UsesNonExemptEncryption.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/UsesNonExemptEncryption.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Version.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Version.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/Version.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/XcodeProjectFile.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/XcodeProjectFile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/XcodeProjectFile.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/codeMod.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/codeMod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/codeMod.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/utils/Xcodeproj.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/utils/Xcodeproj.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/utils/Xcodeproj.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/utils/getInfoPlistPath.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/utils/getInfoPlistPath.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/utils/getInfoPlistPath.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/utils/string.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/utils/string.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/ios/utils/string.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/android-plugins.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/android-plugins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/android-plugins.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/createBaseMod.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/createBaseMod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/createBaseMod.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/ios-plugins.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/ios-plugins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/ios-plugins.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/mod-compiler.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/mod-compiler.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/mod-compiler.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withAndroidBaseMods.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withAndroidBaseMods.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withAndroidBaseMods.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withDangerousMod.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withDangerousMod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withDangerousMod.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withFinalizedMod.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withFinalizedMod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withFinalizedMod.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withIosBaseMods.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withIosBaseMods.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withIosBaseMods.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withMod.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withMod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withMod.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withPlugins.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withPlugins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withPlugins.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withRunOnce.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withRunOnce.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withRunOnce.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withStaticPlugin.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withStaticPlugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/plugins/withStaticPlugin.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/BuildProperties.types.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/BuildProperties.types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/BuildProperties.types.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/Updates.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/Updates.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/Updates.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/XML.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/XML.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/XML.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/commonCodeMod.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/commonCodeMod.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/commonCodeMod.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/errors.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/errors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/errors.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/fs.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/fs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/fs.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/generateCode.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/generateCode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/generateCode.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/glob.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/glob.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/glob.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/history.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/history.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/history.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/locales.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/locales.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/locales.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/matchBrackets.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/matchBrackets.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/matchBrackets.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/modules.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/modules.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/modules.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/obj.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/obj.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/obj.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/plugin-resolver.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/plugin-resolver.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/plugin-resolver.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/sortObject.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/sortObject.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/sortObject.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/warnings.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/warnings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/build/utils/warnings.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-plugins/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-types/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-types/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-types/build/ExpoConfig.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-types/build/ExpoConfig.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config-types/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/Config.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/Config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/Config.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/Config.types.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/Config.types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/Config.types.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/Errors.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/Errors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/Errors.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/Serialize.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/Serialize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/Serialize.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/buildCacheProvider.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/buildCacheProvider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/buildCacheProvider.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/environment.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/environment.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/environment.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/evalConfig.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/evalConfig.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/evalConfig.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/getConfig.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/getConfig.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/getConfig.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/getExpoSDKVersion.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/getExpoSDKVersion.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/getExpoSDKVersion.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/paths/env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/paths/env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/paths/env.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/paths/extensions.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/paths/extensions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/paths/extensions.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/paths/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/paths/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/paths/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/paths/paths.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/paths/paths.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/paths/paths.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/plugins/withConfigPlugins.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/plugins/withConfigPlugins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/plugins/withConfigPlugins.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/plugins/withInternal.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/plugins/withInternal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/plugins/withInternal.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/resolvePackageJson.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/resolvePackageJson.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/build/resolvePackageJson.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/paths/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/config/paths/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/env/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/env/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/env/build/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/env/build/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/env/build/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/env/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/json-file/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/json-file/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/json-file/build/JsonFile.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/json-file/build/JsonFile.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/json-file/build/JsonFile.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/json-file/build/JsonFileError.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/json-file/build/JsonFileError.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/json-file/build/JsonFileError.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/json-file/build/writeAtomic.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/json-file/build/writeAtomic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/json-file/build/writeAtomic.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/json-file/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/plist/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/plist/build/build.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/plist/build/build.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/plist/build/build.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/plist/build/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/plist/build/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/plist/build/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/plist/build/parse.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/plist/build/parse.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/plist/build/parse.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/@expo/plist/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/ansi-styles/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/ansi-styles/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/ansi-styles/license" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/ansi-styles/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/ansi-styles/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/chalk/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/chalk/license" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/chalk/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/chalk/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/chalk/source/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/chalk/source/templates.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/chalk/source/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/commander/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/commander/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/commander/Readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/commander/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/commander/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/commander/typings/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/android/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/android/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/android/src/main/java/expo/modules/constants/ConstantsModule.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/android/src/main/java/expo/modules/constants/ConstantsPackage.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/android/src/main/java/expo/modules/constants/ConstantsService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/Constants.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/Constants.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/Constants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/Constants.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/Constants.server.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/Constants.server.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/Constants.server.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/Constants.server.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/Constants.types.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/Constants.types.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/Constants.types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/Constants.types.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/ExponentConstants.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/ExponentConstants.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/ExponentConstants.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/ExponentConstants.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/ExponentConstants.web.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/ExponentConstants.web.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/ExponentConstants.web.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/build/ExponentConstants.web.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/expo-module.config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/ios/ConstantsModule.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/ios/EXConstants.podspec" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/ios/EXConstantsInstallationIdProvider.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/ios/EXConstantsInstallationIdProvider.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/ios/EXConstantsService.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/ios/EXConstantsService.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/ios/PrivacyInfo.xcprivacy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/jest-rsc.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/scripts/build/getAppConfig.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/scripts/build/getAppConfig.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/scripts/get-app-config-android.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/scripts/get-app-config-ios.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/scripts/getAppConfig.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/scripts/jest.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/scripts/src/getAppConfig.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/scripts/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/scripts/with-node.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/src/Constants.server.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/src/Constants.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/src/Constants.types.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/src/ExponentConstants.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/src/ExponentConstants.web.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/expo-constants/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/glob.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/glob.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/glob.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/glob.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/has-magic.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/has-magic.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/has-magic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/has-magic.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/ignore.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/ignore.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/ignore.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/ignore.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/index.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/pattern.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/pattern.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/pattern.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/pattern.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/processor.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/processor.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/processor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/processor.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/walker.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/walker.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/walker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/commonjs/walker.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/bin.d.mts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/bin.d.mts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/bin.mjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/bin.mjs.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/glob.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/glob.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/glob.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/glob.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/has-magic.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/has-magic.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/has-magic.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/has-magic.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/ignore.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/ignore.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/ignore.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/ignore.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/index.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/pattern.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/pattern.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/pattern.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/pattern.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/processor.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/processor.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/processor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/processor.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/walker.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/walker.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/walker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/dist/esm/walker.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/glob/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/has-flag/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/has-flag/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/has-flag/license" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/has-flag/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/has-flag/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/lru-cache/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/lru-cache/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/lru-cache/dist/commonjs/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/lru-cache/dist/commonjs/index.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/lru-cache/dist/commonjs/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/lru-cache/dist/commonjs/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/lru-cache/dist/commonjs/index.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/lru-cache/dist/commonjs/index.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/lru-cache/dist/commonjs/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/lru-cache/dist/esm/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/lru-cache/dist/esm/index.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/lru-cache/dist/esm/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/lru-cache/dist/esm/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/lru-cache/dist/esm/index.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/lru-cache/dist/esm/index.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/lru-cache/dist/esm/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/lru-cache/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/path-scurry/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/path-scurry/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/path-scurry/dist/commonjs/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/path-scurry/dist/commonjs/index.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/path-scurry/dist/commonjs/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/path-scurry/dist/commonjs/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/path-scurry/dist/commonjs/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/path-scurry/dist/esm/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/path-scurry/dist/esm/index.d.ts.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/path-scurry/dist/esm/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/path-scurry/dist/esm/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/path-scurry/dist/esm/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/path-scurry/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/bin/sucrase" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/bin/sucrase-node" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/CJSImportProcessor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/HelperManager.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/NameManager.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/Options-gen-types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/Options.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/TokenProcessor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/cli.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/computeSourceMap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/CJSImportProcessor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/HelperManager.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/NameManager.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/Options-gen-types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/Options.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/TokenProcessor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/cli.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/computeSourceMap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/identifyShadowedGlobals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/plugins/flow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/plugins/jsx/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/plugins/jsx/xhtml.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/plugins/types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/plugins/typescript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/tokenizer/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/tokenizer/keywords.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/tokenizer/readWord.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/tokenizer/readWordTree.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/tokenizer/state.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/tokenizer/types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/traverser/base.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/traverser/expression.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/traverser/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/traverser/lval.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/traverser/statement.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/traverser/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/util/charcodes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/util/identifier.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/parser/util/whitespace.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/register.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/transformers/CJSImportTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/transformers/ESMImportTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/transformers/FlowTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/transformers/JSXTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/transformers/JestHoistTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/transformers/NumericSeparatorTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/transformers/OptionalCatchBindingTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/transformers/OptionalChainingNullishTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/transformers/ReactDisplayNameTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/transformers/ReactHotLoaderTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/transformers/RootTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/transformers/Transformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/transformers/TypeScriptTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/util/elideImportEquals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/util/formatTokens.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/util/getClassInfo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/util/getDeclarationInfo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/util/getIdentifierNames.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/util/getImportExportSpecifierInfo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/util/getJSXPragmaInfo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/util/getNonTypeIdentifiers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/util/getTSImportedNames.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/util/isAsyncOperation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/util/isExportFrom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/util/isIdentifier.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/util/removeMaybeImportAttributes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/esm/util/shouldElideDefaultExport.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/identifyShadowedGlobals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/plugins/flow.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/plugins/jsx/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/plugins/jsx/xhtml.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/plugins/types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/plugins/typescript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/tokenizer/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/tokenizer/keywords.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/tokenizer/readWord.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/tokenizer/readWordTree.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/tokenizer/state.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/tokenizer/types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/traverser/base.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/traverser/expression.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/traverser/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/traverser/lval.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/traverser/statement.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/traverser/util.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/util/charcodes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/util/identifier.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/parser/util/whitespace.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/register.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/transformers/CJSImportTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/transformers/ESMImportTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/transformers/FlowTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/transformers/JSXTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/transformers/JestHoistTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/transformers/NumericSeparatorTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/transformers/OptionalCatchBindingTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/transformers/OptionalChainingNullishTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/transformers/ReactDisplayNameTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/transformers/ReactHotLoaderTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/transformers/RootTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/transformers/Transformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/transformers/TypeScriptTransformer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/CJSImportProcessor.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/HelperManager.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/NameManager.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/Options-gen-types.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/Options.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/TokenProcessor.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/cli.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/computeSourceMap.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/identifyShadowedGlobals.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/plugins/flow.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/plugins/jsx/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/plugins/jsx/xhtml.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/plugins/types.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/plugins/typescript.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/tokenizer/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/tokenizer/keywords.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/tokenizer/readWord.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/tokenizer/readWordTree.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/tokenizer/state.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/tokenizer/types.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/traverser/base.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/traverser/expression.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/traverser/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/traverser/lval.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/traverser/statement.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/traverser/util.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/util/charcodes.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/util/identifier.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/parser/util/whitespace.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/register.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/transformers/CJSImportTransformer.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/transformers/ESMImportTransformer.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/transformers/FlowTransformer.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/transformers/JSXTransformer.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/transformers/JestHoistTransformer.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/transformers/NumericSeparatorTransformer.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/transformers/OptionalCatchBindingTransformer.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/transformers/OptionalChainingNullishTransformer.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/transformers/ReactDisplayNameTransformer.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/transformers/ReactHotLoaderTransformer.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/transformers/RootTransformer.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/transformers/Transformer.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/transformers/TypeScriptTransformer.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/util/elideImportEquals.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/util/formatTokens.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/util/getClassInfo.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/util/getDeclarationInfo.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/util/getIdentifierNames.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/util/getImportExportSpecifierInfo.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/util/getJSXPragmaInfo.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/util/getNonTypeIdentifiers.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/util/getTSImportedNames.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/util/isAsyncOperation.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/util/isExportFrom.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/util/isIdentifier.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/util/removeMaybeImportAttributes.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/types/util/shouldElideDefaultExport.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/util/elideImportEquals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/util/formatTokens.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/util/getClassInfo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/util/getDeclarationInfo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/util/getIdentifierNames.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/util/getImportExportSpecifierInfo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/util/getJSXPragmaInfo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/util/getNonTypeIdentifiers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/util/getTSImportedNames.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/util/isAsyncOperation.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/util/isExportFrom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/util/isIdentifier.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/util/removeMaybeImportAttributes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/dist/util/shouldElideDefaultExport.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/register/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/register/js.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/register/jsx.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/register/ts-legacy-module-interop.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/register/ts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/register/tsx-legacy-module-interop.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/register/tsx.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/sucrase/ts-node-plugin/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/supports-color/browser.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/supports-color/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/supports-color/license" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/supports-color/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/node_modules/supports-color/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/plugin/build/withNotificationsAndroid.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/plugin/build/withNotificationsAndroid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/plugin/src/withNotificationsAndroid.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/plugin/src/withNotificationsAndroid.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/src/NotificationChannelManager.types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/src/NotificationChannelManager.types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/src/NotificationsEmitter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/src/NotificationsEmitter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/src/TokenEmitter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/src/TokenEmitter.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/src/getDevicePushTokenAsync.web.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/src/getDevicePushTokenAsync.web.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/src/presentNotificationAsync.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/src/registerTaskAsync.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/src/registerTaskAsync.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/src/scheduleNotificationAsync.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/src/scheduleNotificationAsync.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/src/setNotificationChannelAsync.android.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/src/setNotificationChannelAsync.android.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo-notifications/src/useLastNotificationResponse.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo-notifications/src/useLastNotificationResponse.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/bin/autolinking" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo/bin/autolinking" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/bundledNativeModules.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo/bundledNativeModules.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/cli/build/bin/cli" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/cli/build/bin/cli" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/cli/build/src/start/server/metro/instantiateMetro.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/cli/build/src/start/server/metro/instantiateMetro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/cli/build/src/start/server/metro/instantiateMetro.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/cli/build/src/start/server/metro/instantiateMetro.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/cli/build/src/utils/telemetry/clients/FetchClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/cli/build/src/utils/telemetry/clients/FetchClient.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/cli/build/src/utils/telemetry/utils/context.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/cli/build/src/utils/telemetry/utils/context.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/cli/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/cli/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/Cache.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/Cache.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/Cache.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/Download.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/Download.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/Download.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/Ico.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/Ico.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/Ico.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/Image.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/Image.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/Image.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/Image.types.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/Image.types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/Image.types.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/env.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/env.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/jimp.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/jimp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/jimp.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/sharp.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/sharp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/sharp.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/sharp.types.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/sharp.types.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/build/sharp.types.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/image-utils/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/metro-config/build/transform-worker/metro-transform-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/metro-config/build/transform-worker/metro-transform-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/metro-config/build/transform-worker/metro-transform-worker.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/metro-config/build/transform-worker/metro-transform-worker.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/metro-config/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo/node_modules/@expo/metro-config/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/ws/lib/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo/node_modules/ws/lib/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/ws/lib/websocket-server.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo/node_modules/ws/lib/websocket-server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/ws/lib/websocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo/node_modules/ws/lib/websocket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/node_modules/ws/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo/node_modules/ws/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/expo/template.tgz" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/expo/template.tgz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/undici/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/undici/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/undici/lib/web/fetch/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/undici/lib/web/fetch/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/undici/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/undici/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppNavigator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppNavigator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AnimatedAppSplash.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AnimatedAppSplash.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/AuthScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/AuthScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/BuyerHomeScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/BuyerHomeScreen.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/BuyerRequestDetailScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/BuyerRequestDetailScreen.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navigation/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigation/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/screens/SettingsScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/SettingsScreen.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/state/AuthContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/AuthContext.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,20 +956,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/khayyam/Desktop/tapsoran-mobile"
   }
-}</component>
+}]]></component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="7bb0457c-41c3-4103-b18d-6c85ae53dbec" name="Changes" comment="" />

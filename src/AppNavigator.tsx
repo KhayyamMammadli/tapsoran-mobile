@@ -15,6 +15,7 @@ import { HeaderNotifButton } from "./components/HeaderNotifButton";
 import { BuyerCreateRequestScreen } from "./screens/BuyerCreateRequestScreen";
 import { BuyerRequestDetailScreen } from "./screens/BuyerRequestDetailScreen";
 import { AnimatedAppSplash } from "./components/AnimatedAppSplash";
+import { SellerProfileSettingsScreen } from "./screens/SellerProfileSettingsScreen";
 
 const Root = createNativeStackNavigator();
 
@@ -93,6 +94,17 @@ export function AppNavigator() {
               component={PreferencesScreen}
               options={{
                 title: "Ayarlar",
+                headerStyle: { backgroundColor: theme.colors.surface },
+                headerTintColor: theme.colors.onSurface,
+                headerShadowVisible: false,
+              }}
+            />
+
+            <Root.Screen
+              name="SellerProfileSettings"
+              component={SellerProfileSettingsScreen}
+              options={{
+                title: "Satıcı profili",
                 headerStyle: { backgroundColor: theme.colors.surface },
                 headerTintColor: theme.colors.onSurface,
                 headerShadowVisible: false,

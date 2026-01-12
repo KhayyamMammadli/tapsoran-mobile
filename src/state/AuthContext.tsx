@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useMemo, useRef, useState } from "react";
-import { api, setAuthErrorHandler } from "../lib/api";
+import { api, setApiToken, setAuthErrorHandler } from "../lib/api";
 import { Alert } from "react-native";
 import { clearToken, clearUser, getToken, getUser, setToken, setUser, User } from "../lib/authStore";
 import { connectSocket, disconnectSocket } from "../lib/socket";
@@ -89,7 +89,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       const u = await getUser();
       setTok(t);
       setUsr(u);
-      if (t) wireSocket(t);
+      if (t) {
+        setApiToken(t);
+        wireSocket(t);
+      }
       setLoading(false);
     })();
   }, []);
@@ -157,6 +160,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const applySession = async (tokenValue: string, userValue: User) => {
     await setToken(tokenValue);
     await setUser(userValue);
+    setApiToken(tokenValue);
     setTok(tokenValue);
     setUsr(userValue);
     disconnectSocket();
@@ -197,6 +201,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     disconnectSocket();
     await clearToken();
     await clearUser();
+    setApiToken(null);
     setTok(null);
     setUsr(null);
   };
